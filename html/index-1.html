@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Пример установки изображения в качестве фона</title>
+    <title>Пример управления повтором фонового изображения</title>
     <style>
       body {
-        background-image: url("../img/3\ квадрата.png"); /* указываем путь к файлу изображения, которое будет использоваться как задний фон */
-        background-color: white; /* задаем задний фон для элемента */
+        background-image: url("../img/3\ квадрата.png");   /* указываем путь к файлу изображения, которое будет использоваться как задний фон */
+      }
+      div {
+        display: inline-block;                             /* устанавливаем, что элементы становятся блочно-строчными (чтобы выстроились в линейку) */
+        background-image: url("../img/значек\ гугл.png");  /* указываем путь к файлу изображения, которое будет использоваться как задний фон */
+        width: 200px;                                      /* устанавливаем ширину элемента */
+        height: 200px;                                     /* устанавливаем высоту элемента */
+        border: 1px solid;                                 /* устанваливаем сплошную границу размером 1 пиксель */
+        margin-right: 10px;                                /* устанавливаем внешние отступы справа */
+        text-align: center;                                /* выравниваем текст по центру */
+        line-height: 200px;                                /* задаем высоту строки */
+        background-color: azure;                         /* указываем цвет заднего фона*/
+      }
+      .noRepeat {
+        background-repeat: no-repeat;                      /* фоновое изображение не будет повторяться.   */
+      }
+      .repeatX {
+        background-repeat: repeat-x;                       /* фоновое изображение будет повторяться по горизонтали */
+      }
+      .repeatY {
+        background-repeat: repeat-y;                       /* фоновое изображение будет повторяться по вертикали */
       }
     </style>
   </head>
-  <body></body>
+  <body>
+    <h1>Значение repeat для body (по умолчанию)</h1>
+    <div class="noRepeat">no-repeat</div>
+    <div class="repeatX">repeat-x</div>
+    <div class="repeatY">repeat-y</div>
+  </body>
 </html>
