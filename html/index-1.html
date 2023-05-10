@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Пример управления повтором фонового изображения</title>
+    <title>Пример позиционирования фонового изображения</title>
     <style>
-      body {
-        background-image: url("../img/3\ квадрата.png");   /* указываем путь к файлу изображения, которое будет использоваться как задний фон */
-      }
       div {
         display: inline-block;                             /* устанавливаем, что элементы становятся блочно-строчными (чтобы выстроились в линейку) */
         background-image: url("../img/значек\ гугл.png");  /* указываем путь к файлу изображения, которое будет использоваться как задний фон */
-        width: 200px;                                      /* устанавливаем ширину элемента */
-        height: 200px;                                     /* устанавливаем высоту элемента */
+        background-repeat: no-repeat; /**/
+        width: 100px;                                      /* устанавливаем ширину элемента */
+        height: 100px;                                     /* устанавливаем высоту элемента */
         border: 1px solid;                                 /* устанваливаем сплошную границу размером 1 пиксель */
-        margin-right: 10px;                                /* устанавливаем внешние отступы справа */
+        margin: 10px;                                      /* устанавливаем внешние отступы со всех сторон */
         text-align: center;                                /* выравниваем текст по центру */
-        line-height: 200px;                                /* задаем высоту строки */
-        background-color: azure;                         /* указываем цвет заднего фона*/
+        line-height: 60px;                                 /* указываем высоту строки */
+        background-color: azure;                         /* задаем цвет заднего фона */
       }
-      .noRepeat {
-        background-repeat: no-repeat;                      /* фоновое изображение не будет повторяться.   */
-      }
-      .repeatX {
-        background-repeat: repeat-x;                       /* фоновое изображение будет повторяться по горизонтали */
-      }
-      .repeatY {
-        background-repeat: repeat-y;                       /* фоновое изображение будет повторяться по вертикали */
-      }
+      .leftTop {
+        background-position: left top;       /* задаем позицию ключевыми словами */
+      } 
+      .leftCenter {
+        background-position: left center;    /* задаем позицию ключевыми словами */
+      } 
+      .leftBottom {
+        background-position: left bottom;    /* задаем позицию ключевыми словами */
+      } 
+      .rightTop {
+        background-position: right top;      /* задаем позицию ключевыми словами */
+      } 
+      .rightCenter {
+        background-position: right center;    /* задаем позицию ключевыми словами */
+      } 
+      .rightBottom {
+        background-position: right bottom;    /* задаем позицию ключевыми словами */
+      } 
+      .centerTop {
+        background-position: center top;      /* задаем позицию ключевыми словами */
+      } /
+      .centerCenter {
+        background-position: center center;    /* задаем позицию ключевыми словами */
+      } 
+      .centerBottom {
+        background-position: center bottom;    /* задаем позицию ключевыми словами */
+      } 
+      .userPosition {
+        background-position: 20px 75%;         /* задаем позицию по горизонтали в пикселях, а по вертикали в процентах */
+      } 
     </style>
   </head>
   <body>
-    <h1>Значение repeat для body (по умолчанию)</h1>
-    <div class="noRepeat">no-repeat</div>
-    <div class="repeatX">repeat-x</div>
-    <div class="repeatY">repeat-y</div>
+    <div class="leftTop">left top</div>
+    <div class="leftCenter">left center</div>
+    <div class="leftBottom">left bottom</div>
+    <div class="rightTop">right top</div>
+    <div class="rightCenter">right center</div>
+    <div class="rightBottom">right bottom</div>
+    <div class="centerTop">center top</div>
+    <div class="centerCenter">center center</div>
+    <div class="centerBottom">center bottom</div>
+    <div class="userPosition">20px 75%</div>
   </body>
 </html>
