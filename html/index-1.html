@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Использование нескольких градиентов в одном объявлении</title>
+        <title>Пример использования повторяющихся линейных градиентов</title>
         <style> 
             .test {
-                margin: 50px auto;                  /* устанавливаем внешние отступы: сверху и снизу по 50 пикселей, слева и справа автоматически (центрируем элемент) */ 
-                width: 200px;                       /* устанавливаем ширину элемента */
-                height: 200px;                      /* устанавливаем высоту элемента */
-                background-image: linear-gradient(red 30%, transparent 30%, transparent 70%, red 70%),          /* указываем три функции через запятую */ 
-                linear-gradient(90deg, red 31%, transparent 31%, transparent 42%, white 42%, white 58%, transparent 58%, transparent 69%, red 69%),
-                linear-gradient(red 42%, white 42%, white 58%, red 58%);
+                height: 135px;          /* устанавливаем высоту элемента */
+                background-image: repeating-linear-gradient(-45deg, #777 20px, #888 40px, hsla(300,50%,50%,.9) 50px);   /* градиент размещается с отрицательным углом 45 градусов */
+            }
+            .test2 {
+                height: 135px;          /* устанавливаем высоту элемента */
+                background-image: repeating-linear-gradient(to top right, rgba(255,165,0,.8) 5%, khaki 10%, plum 15%);  /* градиент размещается от левого нижнего угла к правому верхнему */
             }
         </style>
     </head>
 	<body>
-		<div class = "test"></div>
+		<div class = "test"></div><br>
+		<div class = "test2"></div>
 	</body>
 </html>
