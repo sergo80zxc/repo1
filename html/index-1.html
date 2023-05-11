@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Использование внутренних отступов в таблице</title>
+        <title>Изменение промежутка между таблицами</title>
         <style> 
             table {
-                margin: 0 auto;             /* центруем по горизонитали внешними отступами */
+                vertical-align: top;        /* верх элемента выравнивается по верху самого высокого элемента */
+                float: left;                /* таблицы становятся плавающими элементами, смещенными по левому краю */
+                margin-right: 30px;         /* устанавливаем внешние отступы справа */
             }
             td, th {
                 border: 1px solid #F50;   /* задаем сплошную границу размером 1 пиксель цвета #F50 */
                 padding: 19px;              /* устанавливаем внутренние отступы для всех сторон */
             }
             caption {
-                padding-bottom: 19px;	    /* устанавливаем внутренние отступы снизу для всех сторон */
+                font-weight: bold;          /* жирное начертание */
+            }
+            .first {
+                border-spacing: 30px 10px;  /* промежуток между ячейками таблицы (первое значение - горизонтальный, второе вертикальный)*/	
+            }
+            .second {
+                border-spacing: 0;          /* промежуток между ячейками таблицы отсутствует */
+            }
+            .third {
+                border-spacing: 0.2em;      /* промежуток между ячейками таблицы (горизонтальный и вертикальный) */	
             }
         </style>
     </head>
 	<body>
-		<table>
-		<caption>Отступы в таблице</caption>
+		<table class = "first">
+			<caption>border-spacing: 30px 10px;</caption>
 			<tr>
-				<th>1</th><th>2</th><th>3</th><th>4</th>
+				<th>1</th><th>2</th><th>3</th>
 			</tr>
 			<tr>
-				<td>2</td><td></td><td></td><td></td>
+				<td>2</td><td></td><td></td>
 			</tr>
 			<tr>
-				<td>3</td><td></td><td></td><td></td>
+				<td>3</td><td></td><td></td>
+			</tr>
+		</table>
+		<table class = "second">
+			<caption>border-spacing: 0;</caption>
+			<tr>
+				<th>1</th><th>2</th><th>3</th>
 			</tr>
 			<tr>
-				<td>4</td><td></td><td></td><td></td>
+				<td>2</td><td></td><td></td>
+			</tr>
+			<tr>
+				<td>3</td><td></td><td></td>
+			</tr>
+		</table>
+		<table class = "third">
+			<caption>border-spacing:0.2em;</caption>
+			<tr>
+				<th>1</th><th>2</th><th>3</th>
+			</tr>
+			<tr>
+				<td>2</td><td></td><td></td>
+			</tr>
+			<tr>
+				<td>3</td><td></td><td></td>
 			</tr>
 		</table>
 	</body>
