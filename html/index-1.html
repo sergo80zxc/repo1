@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Пример использования повторяющихся линейных градиентов</title>
+        <title>Повторяющиеся линейные градиенты (без размытия)</title>
         <style> 
-            .test {
-                height: 135px;          /* устанавливаем высоту элемента */
-                background-image: repeating-linear-gradient(-45deg, #777 20px, #888 40px, hsla(300,50%,50%,.9) 50px);   /* градиент размещается с отрицательным углом 45 градусов */
-            }
-            .test2 {
-                height: 135px;          /* устанавливаем высоту элемента */
-                background-image: repeating-linear-gradient(to top right, rgba(255,165,0,.8) 5%, khaki 10%, plum 15%);  /* градиент размещается от левого нижнего угла к правому верхнему */
-            }
+        .test {
+            height: 135px;      /* устанавливаем высоту элемента */
+            background-image: repeating-linear-gradient(-45deg, red 0, red 10px, green 10px, green 20px);     /* градиент размещается с отрицательным углом 45 градусов */
+        }
+        .test2 {
+            height: 135px;     /* устанавливаем высоту элемента */
+            background-image: repeating-linear-gradient(45deg, yellow 0, yellow 10px, #000 10px, #000 20px);  /* градиент размещается с положительным углом 45 градусов */
+        }
         </style>
     </head>
 	<body>
