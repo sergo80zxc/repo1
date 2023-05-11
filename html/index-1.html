@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Повторяющиеся линейные градиенты (несколько функций).</title>
+        <title>Пример использования радиальных градиентов</title>
         <style> 
+            div {
+                height: 125px;              /* устанавливаем высоту элемента */
+                width: 250px;               /* устанавливаем ширину элемента */
+                display: inline-block;      /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
+            }
             .test {
-                height: 135px;                      /* устанавливаем высоту элемента */
-                background-image: repeating-linear-gradient(-45deg, rgba(255,0,0,.3) 0, rgba(255,0,0,.3) 10px, green 10px, green 20px), /* первый градиент размещается с отрицательным углом 45 градусов */
-                repeating-linear-gradient(45deg, yellow 0, yellow 10px, #000 10px, #000 20px);  /* второй градиент размещается с положительным углом 45 градусов */
-        }
+                background-image: radial-gradient(green, red);              /* задаем двухцветный радиальный градиент эллиптической формы */
+            }
+            .test2 {
+                background-image: radial-gradient(ellipse, orange, black);  /* задаем двухцветный радиальный градиент эллиптической формы */
+            }
+            .test3 {
+                background-image: radial-gradient(circle, green, red);      /* задаем двухцветный радиальный градиент круглой формы */
+            }
+            .test4 {
+                background-image: radial-gradient(circle, orange, black);   /* задаем двухцветный радиальный градиент круглой формы */
+            }
         </style>
     </head>
 	<body>
 		<div class = "test"></div>
+		<div class = "test2"></div><br>
+		<div class = "test3"></div>
+		<div class = "test4"></div>
 	</body>
 </html>
