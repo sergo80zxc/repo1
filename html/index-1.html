@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Пример использования универсального свойства background</title>
-    <style>
-      html,
-      body {
-        height: 100%;          /* устанавливаем высоту элементов */
-        width: 100%;           /* устанавливаем ширину элементов */
-        margin: 0;             /* убираем внешние отступы элемента */
-        padding: 0;            /* убираем внутренние отступы элемента */
-      }
-      header {
-        width: 100%;           /* устанавливаем ширину элемента */
-        min-height: 34%;       /* устанавливаем минимальную высоту элемента */
-        background: white url("cat_g.jpg") bottom/cover no-repeat; /* указываем цвет заднего фона, фоновое изображение, позицию/масштабируем под размеры элемента, фон не повторяется */
-      }
-      .primer2 {
-        width: 100%;                                       /* устанавливаем ширину элемента */
-        min-height: 66%;                                   /* устанавливаем минимальную высоту элемента */
-        background: url("lis.png") top/contain no-repeat,
-          url("cat_g.jpg") bottom/cover no-repeat;
-                                                           /* Обратите внимание, что значения для различных изображений указываются через запятую */
-                                                           /* Путь к изображению 1 позиция/масштаб повтор, Путь к изображению 2  позиция/масштаб повтор */
-      }
-    </style>
-  </head>
-  <body>
-    <header></header>
-    <div class="primer2"></div>
-  </body>
+    <head>
+	    <title>Применение линейных градиентов</title>
+        <style> 
+            div {
+                display: inline-block;          /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
+                width: 80px;                    /* устанавливаем ширину элемента */
+                height: 80px;                   /* устанавливаем высоту элемента */
+                margin: 1em;                    /* устанавливаем внешние отступы со всех сторон элемента */
+            }
+            .test1 {
+                background-image: linear-gradient(orange, black);       /* указываем начальный цвет оранжевый и конечный черный */
+            }
+            .test2 {
+                background-image: linear-gradient(green, red);          /* указываем начальный цвет зеленый и конечный красный */
+            }
+            .test3 {
+                background-image: linear-gradient(red, moccasin);       /* указываем начальный цвет крансый и конечный моккасин */
+            }
+            .test4 {
+                background-image: linear-gradient(yellow, blue);        /* указываем начальный цвет желтый и конечный синий */
+            }
+        </style>
+    </head>
+	<body>
+		<div class = "test1"></div>
+		<div class = "test2"></div><br>
+		<div class = "test3"></div>
+		<div class = "test4"></div>
+	</body>
 </html>
