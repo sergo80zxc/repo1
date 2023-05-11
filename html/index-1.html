@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Позиция градиента (использование градусов)</title>
+        <title>Точки остановки градиента</title>
         <style> 
             div {
-                height: 100px;          /* устанавливаем высоту элемента */
-                line-height: 100px;     /* устанавливаем высоту строки (выравниваем по высоте)*/	
-                text-align: center;     /* выравниваем текст по центру */	
-                vertical-align: top;    /* выравниваем элементы по верху (вертикальное выравнивание)*/
+                height: 50px;               /* устанавливаем высоту элемента */
+                line-height: 50px;          /* устанавливаем высоту строки (выравниваем по высоте)*/	
+                text-align: center;         /* выравниваем текст по центру */	
+                vertical-align: top;        /* выравниваем элементы по верху (вертикальное выравнивание)*/
+                margin-bottom: .7em;        /* устанавливаем внешние отступы снизу элемента */
+                color: white;             /* устанавливаем цвет текста */
             }
             .test {
-                background-color: blue;                                                     /* В случае если браузер пользователя не поддерживает градиенты */
-                background-image: -webkit-linear-gradient(-45deg, blue, white, red);    /* Chrome 4.0 – 9.0, Safari 5.1 - 6.0, UC Browser */
-                background-image: -o-linear-gradient(-45deg, blue, white, red);         /* Opera 11.1 - 12.0 */
-                background-image: -moz-linear-gradient(-45deg, blue, white, red);       /* Firefox 3.6 - 15 */
-                background-image: linear-gradient(135deg, blue, white, red);            /* стандартный синтаксис (должен быть в конце ) */
+                background-image: linear-gradient(to right, red 5%, green, blue);          /* точка остановки только для красного цвета  */ 
+            }
+            .test2 {
+                background-image: linear-gradient(to right, red 10%, green, blue);         /* точка остановки только для красного цвета */ 
+            }
+            .test3 {
+                background-image: linear-gradient(to right, red 50%, green, blue);         /* точка остановки только для красного цвета */ 
+            }
+            .test4 {
+                background-image: linear-gradient(to right, red 80%, green, blue);         /* точка остановки только для красного цвета */ 
+            }
+            .test5 {
+                background-image: linear-gradient(to right, red 15%, green 60%, blue 70%); /* точки остановки для всех цветов */ 
             }
         </style>
     </head>
 	<body>
-		<div class = "test">linear-gradient(135deg, blue, white, red);</div>
+		<div class = "test">linear-gradient(to right, red 5%, green, blue)</div>
+		<div class = "test2">linear-gradient(to right, red 10%, green, blue)</div>
+		<div class = "test3">linear-gradient(to right, red 50%, green, blue)</div>
+		<div class = "test4">linear-gradient(to right, red 80%, green, blue)</div>
+		<div class = "test5">linear-gradient(to right, red 15%, green 60%, blue 70%)</div>
 	</body>
 </html>
