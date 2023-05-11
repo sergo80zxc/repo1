@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Повторяющиеся радиальные градиенты</title>
-    <style>
-        div {
-            height: 290px;              /* устанавливаем высоту элемента */
-            width: 290px;               /* устанавливаем ширину элемента */
-            display: inline-block;      /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
-        }
-        .test {
-            background-image: repeating-radial-gradient(orange 5%, green 10%, skyblue 15%);     /* повтояющийся трехцветный градиент в форме эллипса с точками остановки для каждого цвета через каждые 5% */
-        }
-        .test2 {
-            background-image: repeating-radial-gradient(10px 2em at 40% 40%, orange 5%, green 10%, skyblue 15%);    /* повтояющийся четырехцветный градиент в форме эллипса с заданным размером (10px 2em) и с точками остановки для каждого цвета через каждые 2px */
-        }
-    </style>
+    <head>
+        <title>Повторяющиеся радиальные градиенты (четкие переходы между цветами)</title>
+        <style>
+            div {
+                height: 290px;          /* устанавливаем высоту элемента */
+                width: 290px;           /* устанавливаем ширину элемента */
+                display: inline-block;  /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
+                border-radius: 100%;    /* задаем радиус скругления углов элемента */
+            }
+            .test {
+                background-image: repeating-radial-gradient(red, red 5px, orange 10px, orange 15px, yellow 20px, yellow 25px, green 30px, green 35px, SkyBlue 40px, SkyBlue 45px, blue 50px, blue 55px, violet 60px, violet 65px); /* повтояющийся четырнадцатицветный градиент с точками остановки для каждого цвета через каждые 5px */
+            }
+            .test2 {
+                background-image: repeating-radial-gradient(black, black 2px, white 4px, white 6px);        /* повтояющийся четырехцветный градиент с точками остановки для каждого цвета через каждые 2px */
+            }
+        </style>
     </head>
 	<body>
 		<div class = "test"></div>
