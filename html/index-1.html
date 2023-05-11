@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Пример указания размера для радиальных градиентов</title>
+	<title>Повторяющиеся радиальные градиенты</title>
     <style>
         div {
-            height: 200px;              /* устанавливаем высоту элемента */
-            width: 200px;               /* устанавливаем ширину элемента */
+            height: 290px;              /* устанавливаем высоту элемента */
+            width: 290px;               /* устанавливаем ширину элемента */
             display: inline-block;      /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
-            line-height: 125px;         /* устанавливаем высоту строки */
-            text-align: center;         /* выравниваем текст по центру */
-            margin-bottom: .3em;        /* устанавливаем внешний отступ снизу 0.3em */
-            color: white;             /* устанавливаем цвет текста */
         }
         .test {
-            background-image: radial-gradient(50px, red, orange, yellow, green, skyblue, blue, violet); /* значение 50px задает радиус для круглого градиента, состоящего из 7 цветов */
+            background-image: repeating-radial-gradient(orange 5%, green 10%, skyblue 15%);     /* повтояющийся трехцветный градиент в форме эллипса с точками остановки для каждого цвета через каждые 5% */
         }
         .test2 {
-            background-image: radial-gradient(15% 45%, red, orange, yellow, green, skyblue, blue, violet, white); /* два значения в процентах, первое - горизонтальный радиус, а второе - вертикальный радиус для эллиптического восьмицветного градиента */
+            background-image: repeating-radial-gradient(10px 2em at 40% 40%, orange 5%, green 10%, skyblue 15%);    /* повтояющийся четырехцветный градиент в форме эллипса с заданным размером (10px 2em) и с точками остановки для каждого цвета через каждые 2px */
         }
-        .test3 {
-            background-image: radial-gradient(100px 1em, orange, yellow, green, skyblue, blue, violet); /* два значения в единицах измерения длины, первое в px - горизонтальный радиус, а второе в em - вертикальный радиус для эллиптического семицветного градиента */
-        }
-        </style>
+    </style>
     </head>
 	<body>
 		<div class = "test"></div>
 		<div class = "test2"></div>
-		<div class = "test3"></div>
 	</body>
 </html>
