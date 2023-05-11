@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Пример использования радиальных градиентов</title>
+        <title>Пример позиционирования радиальных градиентов</title>
         <style> 
             div {
                 height: 125px;              /* устанавливаем высоту элемента */
-                width: 250px;               /* устанавливаем ширину элемента */
+                width: 125px;               /* устанавливаем ширину элемента */
                 display: inline-block;      /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
+                line-height: 125px;         /* устанавливаем высоту строки */
+                text-align: center;         /* выравниваем текст по центру */
+                margin-bottom: .3em;        /* устанавливаем внешний отступ снизу 0.3em */
+                color: white;             /* устанавливаем цвет текста */
             }
             .test {
-                background-image: radial-gradient(green, red);              /* задаем двухцветный радиальный градиент эллиптической формы */
+                background-image: radial-gradient(at 5px 45px, green, black);           /* позиция по оси x - 5px, по оси y - 45px */
             }
             .test2 {
-                background-image: radial-gradient(ellipse, orange, black);  /* задаем двухцветный радиальный градиент эллиптической формы */
+                background-image: radial-gradient(at 50% top, green, black);            /* позиция по оси x - 50, по оси y - ключевое слово top */
             }
             .test3 {
-                background-image: radial-gradient(circle, green, red);      /* задаем двухцветный радиальный градиент круглой формы */
+                background-image: radial-gradient(circle at top left, green, black);    /* позиция по оси x - ключевое слово top, по оси y - ключевое слово left */
             }
             .test4 {
-                background-image: radial-gradient(circle, orange, black);   /* задаем двухцветный радиальный градиент круглой формы */
+                background-image: radial-gradient(ellipse at 0% bottom, green, black);  /* позиция по оси x - 0%, по оси y - ключевое слово bottom */
+            }
+            .test5 {
+                background-image: radial-gradient(circle at center bottom, green, black); /* позиция по оси x - ключевое слово center, по оси y - ключевое слово bottom*/
+            }
+            .test6 {
+                background-image: radial-gradient(at 100% 100%, green, black);             /* позиция по оси x - 100%, по оси y - 100% */
             }
         </style>
     </head>
 	<body>
-		<div class = "test"></div>
-		<div class = "test2"></div><br>
-		<div class = "test3"></div>
-		<div class = "test4"></div>
+		<div class = "test">at 5px 45px</div>
+		<div class = "test2">at 50% top</div>
+		<div class = "test3">at top left</div><br>
+		<div class = "test4">at 0% bottom</div>
+		<div class = "test5">at center bottom</div>
+		<div class = "test6">at 100% 100%</div>
 	</body>
 </html>
