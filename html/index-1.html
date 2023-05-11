@@ -1,51 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Позиция градиента (использование ключевых слов)</title>
+        <title>Позиция градиента (использование градусов)</title>
         <style> 
             div {
-                display: inline-block;          /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
-                width: 100px;                   /* устанавливаем ширину элемента */
-                height: 100px;                  /* устанавливаем высоту элемента */
-                margin: 1rem;                   /* устанавливаем внешние отступы со всех сторон элемента */
-                line-height: 100px;             /* устанавливаем высоту строки (выравниваем по высоте)*/	
-                text-align: center;             /* выравниваем текст по центру */
-                vertical-align: top;            /* выравниваем элементы по верху (вертикальное выравнивание)*/
+                height: 100px;          /* устанавливаем высоту элемента */
+                line-height: 100px;     /* устанавливаем высоту строки (выравниваем по высоте)*/	
+                text-align: center;     /* выравниваем текст по центру */	
+                vertical-align: top;    /* выравниваем элементы по верху (вертикальное выравнивание)*/
             }
-            .test1 {
-                background-image: linear-gradient(to left, red, blue);         /* градиент размещается справа налево */
-            }
-            .test2 {
-                background-image: linear-gradient(to right, red, blue);        /* градиент размещается слева направо */
-            }
-            .test3 {
-                background-image: linear-gradient(to top, red, blue);           /* градиент размещается снизу вверх */
-            }
-            .test4 {
-                background-image: linear-gradient(to bottom, red, blue);        /* градиент размещается сверху вниз (значение по умолчанию) */
-            }
-            .test5 {
-                background-image: linear-gradient(to left top,  red, blue);     /* градиент размещается от правого нижнего угла к левому верхнему */
-            }
-            .test6 {
-                background-image: linear-gradient(to right top,  red, blue);    /* градиент размещается от левого нижнего угла к правому верхнему */
-            }
-            .test7 {
-                background-image: linear-gradient(to left bottom,  red, blue);  /* градиент размещается от правого верхнего угла к левому нижнему. */
-            }
-            .test8 {
-                background-image: linear-gradient(to right bottom,  red, blue); /* градиент размещается от левого верхнего угла к правому нижнему */
+            .test {
+                background-color: blue;                                                     /* В случае если браузер пользователя не поддерживает градиенты */
+                background-image: -webkit-linear-gradient(-45deg, blue, white, red);    /* Chrome 4.0 – 9.0, Safari 5.1 - 6.0, UC Browser */
+                background-image: -o-linear-gradient(-45deg, blue, white, red);         /* Opera 11.1 - 12.0 */
+                background-image: -moz-linear-gradient(-45deg, blue, white, red);       /* Firefox 3.6 - 15 */
+                background-image: linear-gradient(135deg, blue, white, red);            /* стандартный синтаксис (должен быть в конце ) */
             }
         </style>
     </head>
 	<body>
-		<div class = "test1">to left</div>
-		<div class = "test2">to right</div>
-		<div class = "test3">to top</div>
-		<div class = "test4">to bottom</div><br>
-		<div class = "test5">to left top</div>
-		<div class = "test6">to right top</div>
-		<div class = "test7">to left bottom</div>
-		<div class = "test8">to right bottom</div>
+		<div class = "test">linear-gradient(135deg, blue, white, red);</div>
 	</body>
 </html>
