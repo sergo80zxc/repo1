@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Пример позиционирования радиальных градиентов</title>
+        <title>Точки остановки в радиальных градиентах</title>
         <style> 
             div {
-                height: 125px;              /* устанавливаем высоту элемента */
-                width: 125px;               /* устанавливаем ширину элемента */
-                display: inline-block;      /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
-                line-height: 125px;         /* устанавливаем высоту строки */
-                text-align: center;         /* выравниваем текст по центру */
-                margin-bottom: .3em;        /* устанавливаем внешний отступ снизу 0.3em */
-                color: white;             /* устанавливаем цвет текста */
+                height: 125px;                  /* устанавливаем высоту элемента */
+                width: 200px;                   /* устанавливаем ширину элемента */
+                display: inline-block;          /* устанавливаем, что элементы <div> становятся блочно-строчными (чтобы выстроились в линейку) */
             }
             .test {
-                background-image: radial-gradient(at 5px 45px, green, black);           /* позиция по оси x - 5px, по оси y - 45px */
+                background-image: radial-gradient(circle, red 10%, green);              /* градиент круглой формы, у которого 10% от центра занимает красный цвет, который плавно переходит в зеленый, занимающий оставшую часть элемента */
             }
             .test2 {
-                background-image: radial-gradient(at 50% top, green, black);            /* позиция по оси x - 50, по оси y - ключевое слово top */
+                background-image: radial-gradient(circle, red 10%, green 50%, blue); /* градиент круглой формы, у которого 50% от центра занимает красный цвет, который плавно переходит в зеленый, с точкой остановки 85%, он в свою очередь плавно переходит в синий */
             }
             .test3 {
-                background-image: radial-gradient(circle at top left, green, black);    /* позиция по оси x - ключевое слово top, по оси y - ключевое слово left */
+                background-image: radial-gradient(circle, red 50%, green 85%, blue); /* градиент круглой формы, у которого 10% от центра занимает красный цвет, который плавно переходит в зеленый, с точкой остановки 50%, он в свою очередь плавно переходит в синий */
             }
             .test4 {
-                background-image: radial-gradient(ellipse at 0% bottom, green, black);  /* позиция по оси x - 0%, по оси y - ключевое слово bottom */
+                background-image: radial-gradient(red 10%, green);                      /* градиент в форме эллипса, у которого 10% от центра занимает красный цвет, который плавно переходит в зеленый, занимающий оставшую часть элемента */
             }
             .test5 {
-                background-image: radial-gradient(circle at center bottom, green, black); /* позиция по оси x - ключевое слово center, по оси y - ключевое слово bottom*/
+                background-image: radial-gradient(red 10%, green 50%, blue);           /* градиент в форме эллипса, у которого 10% от центра занимает красный цвет, который плавно переходит в зеленый, с точкой остановки 50%, он в свою очередь плавно переходит в синий */
             }
             .test6 {
-                background-image: radial-gradient(at 100% 100%, green, black);             /* позиция по оси x - 100%, по оси y - 100% */
+                background-image: radial-gradient(red 50%, green 85%, blue);           /* градиент в форме эллипса, у которого 50% от центра занимает красный цвет, который плавно переходит в зеленый, с точкой остановки 85%, он в свою очередь плавно переходит в синий */
             }
         </style>
     </head>
 	<body>
-		<div class = "test">at 5px 45px</div>
-		<div class = "test2">at 50% top</div>
-		<div class = "test3">at top left</div><br>
-		<div class = "test4">at 0% bottom</div>
-		<div class = "test5">at center bottom</div>
-		<div class = "test6">at 100% 100%</div>
+		<div class = "test"></div>
+		<div class = "test2"></div>
+		<div class = "test3"></div><br>
+		<div class = "test4"></div>
+		<div class = "test5"></div>
+		<div class = "test6"></div>
 	</body>
 </html>
