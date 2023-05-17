@@ -2,48 +2,48 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Наклоны элементов в CSS</title>
+	<title>Наклоны элементов по осям</title>
 	<style>
 		.static {
-			display: inline-block; 					/* блочно-строчные элементы (выстраиваем элементы в линейку) */
-			margin: 10px; 								/* внешние отступы со всех сторон */
-			background: gray; 						/* цвет заднего фона */
+			display: inline-block; 				/* блочно-строчные элементы (выстраиваем элементы в линейку) */
+			margin: 10px; 							/* внешние отступы со всех сторон */
+			background: gray; 					/* цвет заднего фона */
 		}
 		div {
-			width: 180px; 								/* ширина элемента */
-			height: 100px; 							/* высота элемента */
-			line-height: 100px; 						/* высота строки (выраывниваем по вертикали) */
-			text-align: center; 						/* горизонтальное выравнивание текста по центру */
-			transition: 0.2s; 						/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
+			width: 180px; 							/* ширина элемента */
+			height: 100px; 						/* высота элемента */
+			line-height: 100px; 					/* высота строки (выраывниваем по вертикали) */
+			text-align: center; 					/* горизонтальное выравнивание текста по центру */
+			transition: 0.2s; 					/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
 		}
-		.test2, .test4, .test6 {background: orange;} /* цвет заднего фона */
-		.test, .test3, .test5 {background: plum;} 	/* цвет заднего фона */
+		.test2, .test4, .test6 {background: orange;} 	/* цвет заднего фона */
+		.test, .test3, .test5 {background: plum;} 		/* цвет заднего фона */
 		.test:hover {
-			transform: skew(20deg, 30deg); 					/* определяем наклон элемента при наведении */
+			transform: skewX(20deg); 		/* определяем наклон элемента по оси X при наведении */
 		}
 		.test2:hover {
-			transform: skew(-20deg, -30deg); 				/* определяем наклон элемента при наведении */
+			transform: skewX(-20deg); 		/* определяем наклон элемента по оси X при наведении */
 		}
 		.test3:hover {
-			transform: skew(20deg); 							/* определяем наклон элемента при наведении */
+			transform: skewX(45deg); 		/* определяем наклон элемента по оси X при наведении */
 		}
 		.test4:hover {
-			transform: skew(-20deg); 							/* определяем наклон элемента при наведении */
+			transform: skewY(20deg); 		/* определяем наклон элемента по оси Y при наведении */
 		}
 		.test5:hover {
-			transform: skew(70deg, 0deg); 					/* определяем наклон элемента при наведении */
+			transform: skewY(-20deg); 		/* определяем наклон элемента по оси Y при наведении */
 		}
 		.test6:hover {
-			transform: skew(0deg, 40deg); 					/* определяем наклон элемента при наведении */
+			transform: skewY(45deg); 		/* определяем наклон элемента по оси Y при наведении */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "static"><div class = "test">skew(20deg, 30deg)</div></div>
-		<div class = "static"><div class = "test2">skew(-20deg, -30deg)</div></div>
-		<div class = "static"><div class = "test3">skew(20deg)</div></div><br>
-		<div class = "static"><div class = "test4">skew(-20deg)</div></div>
-		<div class = "static"><div class = "test5">skew(70deg, 0deg)</div></div>
-		<div class = "static"><div class = "test6">skew(0deg, 40deg)</div></div>
+		<div class = "static"><div class = "test">skewX(20deg)</div></div>
+		<div class = "static"><div class = "test2">skewX(-20deg)</div></div>
+		<div class = "static"><div class = "test3">skewX(70deg)</div></div><br>
+		<div class = "static"><div class = "test4">skewY(20deg)</div></div>
+		<div class = "static"><div class = "test5">skewY(-20deg)</div></div>
+		<div class = "static"><div class = "test6">skewY(70deg)</div></div>
 	</body>
 </html>
