@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Пример вертикального выравнивания в таблице</title>
+	<title>Пример использования свойства table-layout</title>
 	<style> 
 		table {
-			border-collapse: collapse; 	/* объединяем границы ячеек в одну */	
+			width: 50%; 							/* задаем ширину таблицы */
+			word-wrap: break-word; 				/* слово может быть прервано в произвольном месте */
 		}
 		td, th {
-			border: 1px solid; 				/* задаем сплошную границу размером 1 пиксель */
-			height: 55px; 						/* задаем высоту ячеек */
+			border: 1px solid Chocolate;  /* задаем сплошную границу размером 1 пиксель цвета шоколад */
 		}
-		.baseline {
-			vertical-align: baseline; 		/* выравнивает базовую линию ячейки по базовой линии родителя */
+		.test {
+			table-layout: auto; 					/* автоматический алгоритм размещения макета таблицы браузером (по умолчанию) */
 		}
-		.top {
-			vertical-align: top; 			/* выравнивает содержимое ячейки вертикально по верхнему краю */
-		}
-		.middle {
-			vertical-align: middle; 		/* выравнивает содержимое ячейки вертикально по середине */
-		}
-		.bottom {
-			vertical-align: bottom; 		/* выравнивает содержимое ячейки вертикально по нижнему краю */
+		.test2 {
+			table-layout: fixed; 				/* фиксированный алгоритм размещения макета таблицы браузером */
 		}
 	</style>
 </head>
 	<body>
-		<table> 
+		<table class = "test">
+			<caption>table-layout: auto;</caption>
 			<tr>
-				<th>Значение</th><th>Описание</th>
+				<th>Наименование</th><th>2009</th><th>2010</th><th>2011</th><th>2012</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th>
 			</tr>
-			<tr class = "baseline"> 
-				<td>baseline</td><td>Выравнивает базовую линию ячейки по базовой линии родителя. Это значение по умолчанию.</td>
+			<tr>
+				<td>Пшеница</td><td>125</td><td>215</td><td>2540</td><td>33287</td><td>695878</td><td>1222222</td><td>125840000</td><td>125</td>
 			</tr>
-			<tr class = "top"> 
-				<td>top</td><td>Выравнивает содержимое ячейки вертикально по верхнему краю.</td>
+		</table>
+		<table class = "test2">
+			<caption>table-layout: fixed;</caption>
+			<tr>
+				<th>Наименование</th><th>2009</th><th>2010</th><th>2011</th><th>2012</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th>
 			</tr>
-			<tr class = "middle"> 
-				<td>middle</td><td>Выравнивает содержимое ячейки вертикально по середине.</td>
+			<tr>
+				<td>Пшеница</td><td>125</td><td>215</td><td>2540</td><td>33287</td><td>695878</td><td>1222222</td><td>125840000</td><td>125</td>
 			</tr>
-			<tr class = "bottom"> 
-				<td>bottom</td><td>Выравнивает содержимое ячейки вертикально по нижнему краю.</td>
-			</tr>
-		</table> 
+		</table>
 	</body>
 </html>
