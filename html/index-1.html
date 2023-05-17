@@ -2,33 +2,39 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Скорость переходного эффекта в CSS</title>
+	<title>Скорость переходного эффекта в CSS (пошаговые функции).</title>
 	<style>
 		div {
-			width: 100px; /* ширина элементов */	
-			height: 60px; /* высота элементов */	
-			background: khaki; /* устанавливаем цвет заднего фона */
-			display: inline-block; /* элементы становятся блочно-строчными (выстраиваем в линейку) */ 
-			border: 2px solid orange; /* сплошная граница размером 2 пикселя оранжевого цвета */	
-			transition-duration: 1s; /* продолжительность переходного эффекта */}
-		div:hover {
-			height: 250px; /* высота элементов при наведении */	
-			background: Moccasin; /* устанавливаем цвет заднего фона при наведении */
+			width: 100px; 							/* ширина элементов */	
+			height: 60px; 							/* высота элементов */	
+			background: khaki; 					/* устанавливаем цвет заднего фона */
+			border: 2px solid orange; 		/* сплошная граница размером 2 пикселя оранжевого цвета */	
+			margin-bottom: 10px; 				/* внешний отступ снизу */
 		}
-		.test {transition-timing-function: ease;} /* указываем значение функции перехода */	
-		.test2 {transition-timing-function: linear;} /* указываем значение функции перехода */	
-		.test3 {transition-timing-function: ease-in;} /* указываем значение функции перехода */	
-		.test4 {transition-timing-function: ease-out;} /* указываем значение функции перехода */	
-		.test5 {transition-timing-function: ease-in-out;} /* указываем значение функции перехода */	
-		.test6 {transition-timing-function: cubic-bezier(0.5,0.05,0.7,0.5);} /* указываем значение функции перехода */	
+		div:hover {
+			width: 550px; 							/* ширина элемента при наведении */
+		}
+		.test {
+			transition-duration: 3s; 								/* продолжительность переходного эффекта 3 секунды */	
+			transition-timing-function: steps(5, end);  		/* указываем значение функции перехода (пошаговая функция) */
+		}
+		.test2 {
+			transition-duration: 3s; 								/* продолжительность переходного эффекта 3 секунды */
+			transition-timing-function: steps(5, start); 	/* указываем значение функции перехода (пошаговая функция) */
+		}
+		.test3 {
+			transition-timing-function: step-start; 			/* указываем значение функции перехода (пошаговая функция) */
+		}
+		.test4 {
+			transition-duration: 1s; 								/* продолжительность переходного эффекта 1 секунда */
+			transition-timing-function: step-end; 				/* указываем значение функции перехода (пошаговая функция) */
+		}
 	</style>
 </head>
 	<body>
-		<div class = "test">ease</div>
-		<div class = "test2">linear</div>
-		<div class = "test3">ease-in</div>
-		<div class = "test4">ease-out</div>
-		<div class = "test5">ease-in-out</div>
-		<div class = "test6">cubic-bezier</div>
+		<div class = "test">steps(5, end)</div>
+		<div class = "test2">steps(5, start)</div>
+		<div class = "test3">step-start</div>
+		<div class = "test4">step-end</div>
 	</body>
 </html>
