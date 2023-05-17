@@ -2,48 +2,48 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Поворот элементов по осям</title>
+	<title>Трехмерный поворот элемента</title>
 	<style>
 		.static {
-			display: inline-block; 		/* блочно-строчные элементы (выстраиваем элементы в линейку) */
-			margin: 10px; 					/* внешние отступы со всех сторон */
-			background: gray; 			/* цвет заднего фона */
+			display: inline-block; 			/* блочно-строчные элементы (выстраиваем элементы в линейку) */
+			margin: 10px; 						/* внешние отступы со всех сторон */
+			background: gray; 				/* цвет заднего фона */
 		}
 		div {
 			width: 180px; 					/* ширина элемента */
 			height: 100px; 				/* высота элемента */
-			line-height: 100px;			 /* высота строки (выраывниваем по вертикали) */
+			line-height: 100px; 			/* высота строки (выраывниваем по вертикали) */
 			text-align: center; 			/* горизонтальное выравнивание текста по центру */
-			transition: 0.2s; 				/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
+			transition: 0.2s; 			/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
 		}
-		.test2, .test4, .test6 {background: orange;} 		/* цвет заднего фона */
+		.test2, .test4, .test6 {background: orange;} 	/* цвет заднего фона */
 		.test, .test3, .test5 {background: plum;} 		/* цвет заднего фона */
 		.test:hover {
-			transform: rotateX(60deg); 		/* определяем поворот элемента по оси X при наведении */
+			transform: rotate3d(2,1,0, 50deg); 		/* определяем трехмерный поворот элемента при наведении */
 		}
 		.test2:hover {
-			transform: rotateX(-160deg); 		/* определяем поворот элемента по оси X при наведении */
+			transform: rotate3d(2,1,0, -50deg); 	/* определяем трехмерный поворот элемента при наведении */
 		}
 		.test3:hover {
-			transform: rotateY(20deg); 		/* определяем поворот элемента по оси Y при наведении */
+			transform: rotate3d(1,1,1, 50deg); 		/* определяем трехмерный поворот элемента при наведении */
 		}
 		.test4:hover {
-			transform: rotateY(60deg); 		/* определяем поворот элемента по оси Y при наведении */
+			transform: rotate3d(4,2,2, 50deg); 		/* определяем трехмерный поворот элемента при наведении */
 		}
 		.test5:hover {
-			transform: rotateZ(20deg); 		/* определяем поворот элемента по оси Z при наведении */
+			transform: rotate3d(4,2,2, -50deg); 	/* определяем трехмерный поворот элемента при наведении */
 		}
 		.test6:hover {
-			transform: rotateZ(145deg); 		/* определяем поворот элемента по оси Z при наведении */
+			transform: rotate3d(4,2,2, 1turn); 		/* определяем трехмерный поворот элемента при наведении */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "static"><div class = "test">rotateX(60deg)</div></div>
-		<div class = "static"><div class = "test2">rotateX(-160deg)</div></div>
-		<div class = "static"><div class = "test3">rotateY(20deg)</div></div><br>
-		<div class = "static"><div class = "test4">rotateY(60deg)</div></div>
-		<div class = "static"><div class = "test5">rotateZ(20deg)</div></div>
-		<div class = "static"><div class = "test6">rotateZ(145deg)</div></div>
+		<div class = "static"><div class = "test">rotate3d(2,1,0, 50deg)</div></div>
+		<div class = "static"><div class = "test2">rotate3d(2,1,0, -50deg)</div></div>
+		<div class = "static"><div class = "test3">rotate3d(1,1,1, 50deg)</div></div><br>
+		<div class = "static"><div class = "test4">rotate3d(4,2,2, 50deg)</div></div>
+		<div class = "static"><div class = "test5">rotate3d(4,2,2, -50deg)</div></div>
+		<div class = "static"><div class = "test6">rotate3d(4,2,2, 1turn)</div></div>
 	</body>
 </html>
