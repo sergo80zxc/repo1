@@ -2,31 +2,33 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Выдвижная панель на CSS</title>
+	<title>Скорость переходного эффекта в CSS</title>
 	<style>
-		body, html {
-			height: 100%; 			/* высота элементов */	
-			margin: 0; 				/* убираем внешние отступы */		
-			position: relative;  /* относительное позиционирование */	
-		}
 		div {
-			position: fixed; 		/* фиксированное позиционирование */	
-			top: 30px; 				/* отступ от верхнего края */
-			right: -135px; 		/* отрицательный отступ от правого края (прячем элемент за экран) */
-			width: 200px; 			/* ширина элемента */			 
-			height: 50px; 			/* высота элемента */
-			line-height: 50px;   /* высота строки */
-			background-color: yellow;    /* устанавливаем цвет заднего фона */
-			border: 1px solid #000;      /* сплошная граница размером 1 пиксель черного цвета */
-			transition-delay: 2s; 			 /* задержка переходного эффекта 2 секунды */
-		}
+			width: 100px; /* ширина элементов */	
+			height: 60px; /* высота элементов */	
+			background: khaki; /* устанавливаем цвет заднего фона */
+			display: inline-block; /* элементы становятся блочно-строчными (выстраиваем в линейку) */ 
+			border: 2px solid orange; /* сплошная граница размером 2 пикселя оранжевого цвета */	
+			transition-duration: 1s; /* продолжительность переходного эффекта */}
 		div:hover {
-			transition-delay: 0s; 			 /* отсутствие задержки при наведении на элемент */
-			right: 0; 							 /* отступ от правого края равен нулю */
+			height: 250px; /* высота элементов при наведении */	
+			background: Moccasin; /* устанавливаем цвет заднего фона при наведении */
 		}
+		.test {transition-timing-function: ease;} /* указываем значение функции перехода */	
+		.test2 {transition-timing-function: linear;} /* указываем значение функции перехода */	
+		.test3 {transition-timing-function: ease-in;} /* указываем значение функции перехода */	
+		.test4 {transition-timing-function: ease-out;} /* указываем значение функции перехода */	
+		.test5 {transition-timing-function: ease-in-out;} /* указываем значение функции перехода */	
+		.test6 {transition-timing-function: cubic-bezier(0.5,0.05,0.7,0.5);} /* указываем значение функции перехода */	
 	</style>
 </head>
 	<body>
-		<div>Hover Me -----Thank you!-----</div>
+		<div class = "test">ease</div>
+		<div class = "test2">linear</div>
+		<div class = "test3">ease-in</div>
+		<div class = "test4">ease-out</div>
+		<div class = "test5">ease-in-out</div>
+		<div class = "test6">cubic-bezier</div>
 	</body>
 </html>
