@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Пример использования свойства caption-side</title>
+	<title>Пример горизонтального выравнивания в таблице</title>
 	<style> 
+		table {
+			border-collapse: collapse; 	/* объединяем границы ячеек в одну */	
+		}
 		td, th {
-			border: 1px solid blue; 	/* задаем сплошную границу размером 1 пиксель синего цвета */
+			border: 1px solid; 				/* задаем сплошную границу размером 1 пиксель */
 		}
-		.topCaption {
-			caption-side: top; 			/* заголовок таблицы находится над ней */
+		.left {
+			text-align: left; 				/* выравнивает текст ячейки влево */
 		}
-		.bottomCaption {
-			caption-side: bottom; 		/* заголовок таблицы находится под ней */
+		.right {
+			text-align: right; 				/* выравнивает текст ячейки вправо */
+		}
+		.center {
+			text-align: center; 				/* выравнивает текст ячейки по центру */
+		}
+		.justify {
+			text-align: justify; 			/* выравнивает текст ячейки по ширине */
 		}
 	</style>
 </head>
 	<body>
-		<table class = "topCaption">
-			<caption>Заголовок над таблицей</caption>
+		<table>
 			<tr>
-				<th>Наименование</th><th>Цена</th>
+				<th>Значение</th><th>Описание</th>
 			</tr>
-			<tr>
-				<td>Рыба</td><td>350 рублей</td>
+			<tr class = "left">
+				<td>left</td><td>Выравнивает текст ячейки влево. Это значение по умолчанию (если направление текста слева направо).</td>
 			</tr>
-			<tr>
-				<td>Мясо</td><td>250 рублей</td>
+			<tr class = "right">
+				<td>right</td><td>Выравнивает текст ячейки вправо. Это значение по умолчанию (если направление текста справа налево).</td>
 			</tr>
-		</table> 
-		<br>
-		<table class = "bottomCaption">
-			<caption>Заголовок под таблицей</caption>
-			<tr>
-				<th>Наименование</th><th>Цена</th>
+			<tr class = "center">
+				<td>center</td><td>Выравнивает текст ячейки по центру.</td>
 			</tr>
-			<tr>
-				<td>Рыба</td><td>350 рублей</td>
+			<tr class = "justify">
+				<td>justify</td><td>Растягивает линии так, что каждая линия имеет одинаковую ширину (растягивает текст ячейки по ширине).</td>
 			</tr>
-			<tr>
-				<td>Мясо</td><td>250 рублей</td>
-			</tr>
-		</table> 
+		</table>
 	</body>
 </html>
