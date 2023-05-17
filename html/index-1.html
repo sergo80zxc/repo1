@@ -2,30 +2,29 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Относительное позиционирование элементов</title>
+	<title>Фиксированное позиционирование элементов</title>
 	<style>
-		.static {
-			height: 50px; 							/* высота элемента */
-			background-color: red; 			/* цвет заднего фона */
+		html, body {
+			height: 100%;		/* высота элемента */
+			margin: 0; 			/* внешний отступ со всех сторон */
 		}
-		.relative {
-			position: relative; 					/* относительное позиционирование элемента */	
-			height: 100px; 						/* высота элемента */
-			top: 50px; 								/* смещение от вержнего края */
-			left: 100px; 							/* смещение от левого края */	
-			background-color: green; 			/* цвет заднего фона */
+		.fixed {
+			position: fixed; /* фиксированное позиционирование элемента */	
+			height: 100%; 		/* высота элемента */
+			width: 15%; 		/* ширина элемента */
+			background-color: red; /* цвет заднего фона */
+			right: 0; 			/* смещение от правого края */
+		}
+		.container {
+			height: 2000px;	 /* высота элемента */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "static">
-			static
+		<div class = "fixed">
+			fixed
 		</div>
-		<div class = "relative">
-			relative
-		</div>
-		<div class = "static">
-			static
+		<div class = "container">
 		</div>
 	</body>
 </html>
