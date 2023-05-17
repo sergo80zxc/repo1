@@ -2,18 +2,48 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Пример использования универсального свойства transition</title>
+	<title>Наклоны элементов в CSS</title>
 	<style>
-		input[type=text] {
-			width: 20%; 										/* ширина элемента */
-			transition: width 500ms ease-in-out; 		/* описываем переходный эффект (свойство, продолжительность и функция) */
+		.static {
+			display: inline-block; 					/* блочно-строчные элементы (выстраиваем элементы в линейку) */
+			margin: 10px; 								/* внешние отступы со всех сторон */
+			background: gray; 						/* цвет заднего фона */
 		}
-		input[type=text]:focus {
-			width: 40%; 										/* ширина элемента при фокусе на элементе */
+		div {
+			width: 180px; 								/* ширина элемента */
+			height: 100px; 							/* высота элемента */
+			line-height: 100px; 						/* высота строки (выраывниваем по вертикали) */
+			text-align: center; 						/* горизонтальное выравнивание текста по центру */
+			transition: 0.2s; 						/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
+		}
+		.test2, .test4, .test6 {background: orange;} /* цвет заднего фона */
+		.test, .test3, .test5 {background: plum;} 	/* цвет заднего фона */
+		.test:hover {
+			transform: skew(20deg, 30deg); 					/* определяем наклон элемента при наведении */
+		}
+		.test2:hover {
+			transform: skew(-20deg, -30deg); 				/* определяем наклон элемента при наведении */
+		}
+		.test3:hover {
+			transform: skew(20deg); 							/* определяем наклон элемента при наведении */
+		}
+		.test4:hover {
+			transform: skew(-20deg); 							/* определяем наклон элемента при наведении */
+		}
+		.test5:hover {
+			transform: skew(70deg, 0deg); 					/* определяем наклон элемента при наведении */
+		}
+		.test6:hover {
+			transform: skew(0deg, 40deg); 					/* определяем наклон элемента при наведении */
 		}
 	</style>
 </head>
 	<body>
-		Поиск: <input type = "text" name = "poisk" placeholder = "введите запрос">
+		<div class = "static"><div class = "test">skew(20deg, 30deg)</div></div>
+		<div class = "static"><div class = "test2">skew(-20deg, -30deg)</div></div>
+		<div class = "static"><div class = "test3">skew(20deg)</div></div><br>
+		<div class = "static"><div class = "test4">skew(-20deg)</div></div>
+		<div class = "static"><div class = "test5">skew(70deg, 0deg)</div></div>
+		<div class = "static"><div class = "test6">skew(0deg, 40deg)</div></div>
 	</body>
 </html>
