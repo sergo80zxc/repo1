@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Пример использования свойства table-layout</title>
+	<title>Пример использования псевдокласса :nth-child с таблицами</title>
 	<style> 
 		table {
-			width: 50%; 							/* задаем ширину таблицы */
-			word-wrap: break-word; 				/* слово может быть прервано в произвольном месте */
+			width: 100%; 						/* задаем ширину таблицы */
+			border-collapse: collapse; 	/* объединяем границы ячеек в одну */	
 		}
 		td, th {
-			border: 1px solid Chocolate;  /* задаем сплошную границу размером 1 пиксель цвета шоколад */
+			border: 1px solid; 				/* задаем сплошную границу размером 1 пиксель */
 		}
-		.test {
-			table-layout: auto; 					/* автоматический алгоритм размещения макета таблицы браузером (по умолчанию) */
+		tr:nth-child(even) { 				/* выбираем все четные строки */
+			border: 3px solid red; 		/* задаем сплошную границу размером 3 пикселя красного цвета */
 		}
-		.test2 {
-			table-layout: fixed; 				/* фиксированный алгоритм размещения макета таблицы браузером */
+		td:nth-child(4n+2) { 				/* выбираем каждый четвертый элемент, начиная со второго */
+			background: #E8E8FF; 			/* задаем цвет заднего фона */
 		}
 	</style>
 </head>
 	<body>
-		<table class = "test">
-			<caption>table-layout: auto;</caption>
+		<table>
 			<tr>
-				<th>Наименование</th><th>2009</th><th>2010</th><th>2011</th><th>2012</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th>
+				<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th>
+				<th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th>
 			</tr>
 			<tr>
-				<td>Пшеница</td><td>125</td><td>215</td><td>2540</td><td>33287</td><td>695878</td><td>1222222</td><td>125840000</td><td>125</td>
-			</tr>
-		</table>
-		<table class = "test2">
-			<caption>table-layout: fixed;</caption>
-			<tr>
-				<th>Наименование</th><th>2009</th><th>2010</th><th>2011</th><th>2012</th><th>2013</th><th>2014</th><th>2015</th><th>2016</th>
+				<td>2</td><td></td><td></td><td></td><td></td><td></td><td></td>
+				<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			</tr>
 			<tr>
-				<td>Пшеница</td><td>125</td><td>215</td><td>2540</td><td>33287</td><td>695878</td><td>1222222</td><td>125840000</td><td>125</td>
+				<td>3</td><td></td><td></td><td></td><td></td><td></td><td></td>
+				<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+			</tr>
+			<tr>
+				<td>4</td><td></td><td></td><td></td><td></td><td></td><td></td>
+				<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 			</tr>
 		</table>
 	</body>
