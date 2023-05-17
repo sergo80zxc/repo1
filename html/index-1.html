@@ -2,48 +2,48 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Сдвиг элементов по конкретным осям</title>
+	<title>Трехмерный сдвиг элементов</title>
 	<style>
 		.static {
-			display: inline-block; 					/* блочно-строчные элементы (выстраиваем элементы в линейку) */
-			margin: 10px; 								/* внешние отступы со всех сторон */
-			background: gray; 						/* цвет заднего фона */
+			display: inline-block; 				/* блочно-строчные элементы (выстраиваем элементы в линейку) */
+			margin: 10px; 							/* внешние отступы со всех сторон */
+			background: gray; 					/* цвет заднего фона */
 		}
 		div {
-			width: 180px; 								/* ширина элемента */
-			height: 100px; 							/* высота элемента */
-			line-height: 100px;						 /* высота строки (выраывниваем по вертикали) */
-			text-align: center; 						/* горизонтальное выравнивание текста по центру */
-			transition: 0.2s; 							/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
+			width: 180px; 							/* ширина элемента */
+			height: 100px; 						/* высота элемента */
+			line-height: 100px; 					/* высота строки (выраывниваем по вертикали) */
+			text-align: center; 					/* горизонтальное выравнивание текста по центру */
+			transition: 0.2s; 					/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
 		}
-		.test2, .test4, .test6 {background: orange;} 		/* цвет заднего фона */
-		.test, .test3, .test5 {background: plum;} 			/* цвет заднего фона */
+		.test2, .test4, .test6 {background: orange;} /* цвет заднего фона */
+		.test, .test3, .test5 {background: plum;} /* цвет заднего фона */
 		.test:hover {
-			transform: translateX(20px); 				/* сдвиг элемента по оси X при наведении */
+			transform: perspective(500px) rotateX(45deg) translate3d(20px,20px,20px); /* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерный сдвиг элемента) */
 		}
 		.test2:hover {
-			transform: translateX(-20px);				 /* сдвиг элемента по оси X при наведении */
+			transform: perspective(500px) rotateX(45deg) translate3d(-20px,-20px,-20px); /* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерный сдвиг элемента) */
 		}
 		.test3:hover {
-			transform: translateY(20px); 				/* сдвиг элемента по оси Y при наведении */
+			transform: perspective(500px) rotateX(45deg) translate3d(-20px,-20px,-80px); /* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерный сдвиг элемента) */
 		}
 		.test4:hover {
-			transform: translateY(-20px); 				/* сдвиг элемента по оси Y при наведении */
+			transform: perspective(500px) rotateX(45deg) translate3d(0,0,-80px); /* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерный сдвиг элемента) */
 		}
 		.test5:hover {
-			transform: perspective(500px) rotateX(45deg) translateZ(30px); 		/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, сдвиг элемента по оси Z ) */
+			transform: perspective(500px) rotateX(45deg) translate3d(20px,0, 40px); /* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерный сдвиг элемента) */
 		}
 		.test6:hover {
-			transform: perspective(500px) rotateX(45deg) translateZ(-30px); 		/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, сдвиг элемента по оси Z ) */
+			transform: perspective(500px) rotateX(45deg) translate3d(0,20px, 40px); /* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерный сдвиг элемента) */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "static"><div class = "test">translateX(20px)</div></div>
-		<div class = "static"><div class = "test2">translateX(-20px)</div></div>
-		<div class = "static"><div class = "test3">translateY(20px)</div></div><br>
-		<div class = "static"><div class = "test4">translateY(-20px)</div></div>
-		<div class = "static"><div class = "test5">translateZ(30px)</div></div>
-		<div class = "static"><div class = "test6">translateZ(-30px)</div></div>
+		<div class = "static"><div class = "test">translate3d(20px,20px,20px)*</div></div>
+		<div class = "static"><div class = "test2">translate3d(-20px,-20px,-20px)*</div></div>
+		<div class = "static"><div class = "test3">translate3d(-20px,-20px,-80px)*</div></div><br>
+		<div class = "static"><div class = "test4">translate3d(0,0,-80px)*</div></div>
+		<div class = "static"><div class = "test5">translate3d(20px,0, 40px)*</div></div>
+		<div class = "static"><div class = "test6">translate3d(0,20px, 40px)*</div></div>
 	</body>
 </html>
