@@ -1,53 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Пример отображения пустых ячеек таблицы</title>
+	<title>Пример использования свойства caption-side</title>
 	<style> 
-		table {
-			float: left; 					/* таблицы становятся плавающими элементами, смещенными по левому краю */
-			margin-right: 30px; 			/* устанавливаем внешние отступы справа */
-		}
 		td, th {
-			border: 1px solid #F50;  /* задаем сплошную границу размером 1 пиксель цвета #F50 */
-			width: 75px; 					/* ширина ячеек */
-			height: 50px; 					/* высота ячеек */
-			background: wheat; 		  /* задаем цвет заднего фона ячеек */
+			border: 1px solid blue; 	/* задаем сплошную границу размером 1 пиксель синего цвета */
 		}
-		caption {
-			font-weight: bold; 			/* жирное начертание */
+		.topCaption {
+			caption-side: top; 			/* заголовок таблицы находится над ней */
 		}
-		.first {
-			empty-cells: show; 			/* показывать пустые ячейки (по умолчанию) */	
-		}
-		.second {
-			empty-cells: hide; 			/* скрывать пустые ячейки */	
+		.bottomCaption {
+			caption-side: bottom; 		/* заголовок таблицы находится под ней */
 		}
 	</style>
 </head>
 	<body>
-		<table class = "first">
-			<caption>empty-cells: show;</caption>
+		<table class = "topCaption">
+			<caption>Заголовок над таблицей</caption>
 			<tr>
-				<th>1</th><th>2</th><th>3</th>
+				<th>Наименование</th><th>Цена</th>
 			</tr>
 			<tr>
-				<td>2</td><td></td><td>☺</td>
+				<td>Рыба</td><td>350 рублей</td>
 			</tr>
 			<tr>
-				<td>3</td><td>☺</td><td></td>
+				<td>Мясо</td><td>250 рублей</td>
 			</tr>
-		</table>
-		<table class = "second">
-			<caption>empty-cells: hide;</caption>
+		</table> 
+		<br>
+		<table class = "bottomCaption">
+			<caption>Заголовок под таблицей</caption>
 			<tr>
-				<th>1</th><th>2</th><th>3</th>
-			</tr>
-			<tr>
-				<td>2</td><td></td><td>☺</td>
+				<th>Наименование</th><th>Цена</th>
 			</tr>
 			<tr>
-				<td>3</td><td>☺</td><td></td>
+				<td>Рыба</td><td>350 рублей</td>
 			</tr>
-		</table>
+			<tr>
+				<td>Мясо</td><td>250 рублей</td>
+			</tr>
+		</table> 
 	</body>
 </html>
