@@ -2,39 +2,18 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Скорость переходного эффекта в CSS (пошаговые функции).</title>
+	<title>Пример использования универсального свойства transition</title>
 	<style>
-		div {
-			width: 100px; 							/* ширина элементов */	
-			height: 60px; 							/* высота элементов */	
-			background: khaki; 					/* устанавливаем цвет заднего фона */
-			border: 2px solid orange; 		/* сплошная граница размером 2 пикселя оранжевого цвета */	
-			margin-bottom: 10px; 				/* внешний отступ снизу */
+		input[type=text] {
+			width: 20%; 										/* ширина элемента */
+			transition: width 500ms ease-in-out; 		/* описываем переходный эффект (свойство, продолжительность и функция) */
 		}
-		div:hover {
-			width: 550px; 							/* ширина элемента при наведении */
-		}
-		.test {
-			transition-duration: 3s; 								/* продолжительность переходного эффекта 3 секунды */	
-			transition-timing-function: steps(5, end);  		/* указываем значение функции перехода (пошаговая функция) */
-		}
-		.test2 {
-			transition-duration: 3s; 								/* продолжительность переходного эффекта 3 секунды */
-			transition-timing-function: steps(5, start); 	/* указываем значение функции перехода (пошаговая функция) */
-		}
-		.test3 {
-			transition-timing-function: step-start; 			/* указываем значение функции перехода (пошаговая функция) */
-		}
-		.test4 {
-			transition-duration: 1s; 								/* продолжительность переходного эффекта 1 секунда */
-			transition-timing-function: step-end; 				/* указываем значение функции перехода (пошаговая функция) */
+		input[type=text]:focus {
+			width: 40%; 										/* ширина элемента при фокусе на элементе */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "test">steps(5, end)</div>
-		<div class = "test2">steps(5, start)</div>
-		<div class = "test3">step-start</div>
-		<div class = "test4">step-end</div>
+		Поиск: <input type = "text" name = "poisk" placeholder = "введите запрос">
 	</body>
 </html>
