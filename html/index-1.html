@@ -2,31 +2,30 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Абсолютное позиционирование элементов</title>
+	<title>Относительное позиционирование элементов</title>
 	<style>
-		div {
-			position: absolute; 		/* абсолютное позиционирование элементов */
-			width: 100px; 				/* ширина элемента */
-			height: 100px; 			/* высота элемента */
+		.static {
+			height: 50px; 							/* высота элемента */
+			background-color: red; 			/* цвет заднего фона */
 		}
-		.absolute {
-			top: 3em; 						/* смещение от вержнего края */
-			right: 50%; 					/* смещение от правого края */	
-			background-color: green; /* цвет заднего фона */
+		.relative {
+			position: relative; 					/* относительное позиционирование элемента */	
+			height: 100px; 						/* высота элемента */
+			top: 50px; 								/* смещение от вержнего края */
+			left: 100px; 							/* смещение от левого края */	
+			background-color: green; 			/* цвет заднего фона */
 		}
-		.absolute2 {
-			bottom: 25%; 					 /* смещение от нижнего края */
-			left: 40%; 						 /* смещение от левого края */
-			background-color: yellow; /* цвет заднего фона */
-		}	
 	</style>
 </head>
 	<body>
-		<div class = "absolute">
-			absolute
+		<div class = "static">
+			static
 		</div>
-		<div class = "absolute2">
-			absolute2
+		<div class = "relative">
+			relative
+		</div>
+		<div class = "static">
+			static
 		</div>
 	</body>
 </html>
