@@ -2,48 +2,48 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Масштабирование элементов по осям</title>
+	<title>Трехмерное масштабирование элементов по осям</title>
 	<style>
 		.static {
-			display: inline-block; 			/* блочно-строчные элементы (выстраиваем элементы в линейку) */
+			display: inline-block;			/* блочно-строчные элементы (выстраиваем элементы в линейку) */
 			margin: 10px; 						/* внешние отступы со всех сторон */
 			background: gray; 				/* цвет заднего фона */
 		}
 		div {
-			width: 180px; 						/* ширина элемента */
-			height: 100px; 					/* высота элемента */
-			line-height: 100px; 				/* высота строки (выраывниваем по вертикали) */
-			text-align: center; 				/* горизонтальное выравнивание текста по центру */
-			transition: 0.2s; 				/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
+			width: 180px; 				/* ширина элемента */
+			height: 100px; 			/* высота элемента */
+			line-height: 100px; 		/* высота строки (выраывниваем по вертикали) */
+			text-align: center; 		/* горизонтальное выравнивание текста по центру */
+			transition: 0.2s; 		/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
 		}
-		.test2, .test4, .test6 {background: orange;}	 /* цвет заднего фона */
-		.test, .test3, .test5 {background: plum;} 		/* цвет заднего фона */
+		.test2, .test4, .test6 {background: orange;} /* цвет заднего фона */
+		.test, .test3, .test5 {background: plum;} /* цвет заднего фона */
 		.test:hover {
-			transform: scaleX(0.5); 			/* масштабируем элемент по оси X при наведении */
+			transform: perspective(500px) rotateX(45deg) scale3d(1,2,1);		 /* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерное масштабирование) */
 		}
 		.test2:hover {
-			transform: scaleX(-0.5); 			/* масштабируем элемент по оси X при наведении */
+			transform: perspective(500px) rotateX(45deg) scale3d(2,1,1); 		/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерное масштабирование) */
 		}
 		.test3:hover {
-			transform: scaleY(0.5); 			/* масштабируем элемент по оси Y при наведении */
+			transform: perspective(500px) rotateX(45deg) scale3d(1,1,2); 		/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерное масштабирование) */
 		}
 		.test4:hover {
-			transform: scaleY(-0.5); 			/* масштабируем элемент по оси Y при наведении */
+			transform: perspective(500px) rotateX(45deg) scale3d(-1,-2,-1); 	/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерное масштабирование) */
 		}
 		.test5:hover {
-			transform: perspective(500px) scaleZ(-2) rotateX(45deg); 		/* используем несколько функций преобразования для элемента (перспектива, поворот по оси X, масштабирование по оси Z) */
+			transform: perspective(500px) rotateX(45deg) scale3d(0.5,1,1); 	/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерное масштабирование) */
 		}
 		.test6:hover {
-			transform: perspective(500px) scaleZ(6) rotateX(45deg); 			/* используем несколько функций преобразования для элемента (перспектива, поворот по оси X, масштабирование по оси Z) */
+			transform: perspective(500px) rotateX(45deg) scale3d(0.5,0.5,2); /* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, трехмерное масштабирование) */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "static"><div class = "test">scaleX(0.5)</div></div>
-		<div class = "static"><div class = "test2">scaleX(-0.5)</div></div>
-		<div class = "static"><div class = "test3">scaleY(0.5)</div></div><br>
-		<div class = "static"><div class = "test4">scaleY(-0.5)</div></div>
-		<div class = "static"><div class = "test5">scaleZ(-2) *</div></div>
-		<div class = "static"><div class = "test6">scaleZ(6) *</div></div>
+		<div class = "static"><div class = "test">scale3d(1,2,1)</div></div>
+		<div class = "static"><div class = "test2">scale3d(2,1,1)</div></div>
+		<div class = "static"><div class = "test3">scale3d(1,1,2)</div></div><br>
+		<div class = "static"><div class = "test4">scale3d(-1,-2,-1)</div></div>
+		<div class = "static"><div class = "test5">scale3d(0.5,1,1)</div></div>
+		<div class = "static"><div class = "test6">scale3d(0.5,0.5,2)</div></div>
 	</body>
 </html>
