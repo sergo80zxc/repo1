@@ -2,48 +2,48 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Сдвиг элементов</title>
+	<title>Сдвиг элементов по конкретным осям</title>
 	<style>
 		.static {
-			display: inline-block; 			/* блочно-строчные элементы (выстраиваем элементы в линейку) */
-			margin: 10px; 						/* внешние отступы со всех сторон */
-			background: gray; 				/* цвет заднего фона */
+			display: inline-block; 					/* блочно-строчные элементы (выстраиваем элементы в линейку) */
+			margin: 10px; 								/* внешние отступы со всех сторон */
+			background: gray; 						/* цвет заднего фона */
 		}
 		div {
-			width: 180px; 				/* ширина элемента */
-			height: 100px; 			/* высота элемента */
-			line-height: 100px; 		/* высота строки (выраывниваем по вертикали) */
-			text-align: center; 		/* горизонтальное выравнивание текста по центру */
-			transition: 0.2s; 		/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
+			width: 180px; 								/* ширина элемента */
+			height: 100px; 							/* высота элемента */
+			line-height: 100px;						 /* высота строки (выраывниваем по вертикали) */
+			text-align: center; 						/* горизонтальное выравнивание текста по центру */
+			transition: 0.2s; 							/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
 		}
-		.test2, .test4, .test6 {background: orange;} 	/* цвет заднего фона */
-		.test, .test3, .test5 {background: plum;} 		/* цвет заднего фона */
+		.test2, .test4, .test6 {background: orange;} 		/* цвет заднего фона */
+		.test, .test3, .test5 {background: plum;} 			/* цвет заднего фона */
 		.test:hover {
-			transform: translate(20px, 20px); 		/* сдвиг элемента при наведении */
+			transform: translateX(20px); 				/* сдвиг элемента по оси X при наведении */
 		}
 		.test2:hover {
-			transform: translate(-20px, -20px); 	/* сдвиг элемента при наведении */
+			transform: translateX(-20px);				 /* сдвиг элемента по оси X при наведении */
 		}
 		.test3:hover {
-			transform: translate(20px, 0); 			/* сдвиг элемента при наведении */
+			transform: translateY(20px); 				/* сдвиг элемента по оси Y при наведении */
 		}
 		.test4:hover {
-			transform: translate(-20px, 0); 			/* сдвиг элемента при наведении */
+			transform: translateY(-20px); 				/* сдвиг элемента по оси Y при наведении */
 		}
 		.test5:hover {
-			transform: translate(0, 20px); 			/* сдвиг элемента при наведении */
+			transform: perspective(500px) rotateX(45deg) translateZ(30px); 		/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, сдвиг элемента по оси Z ) */
 		}
 		.test6:hover {
-			transform: translate(0, -20px); 			/* сдвиг элемента при наведении */
+			transform: perspective(500px) rotateX(45deg) translateZ(-30px); 		/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот по оси X, сдвиг элемента по оси Z ) */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "static"><div class = "test">translate(20px, 20px)</div></div>
-		<div class = "static"><div class = "test2">translate(-20px, -20px)</div></div>
-		<div class = "static"><div class = "test3">translate(20px, 0)</div></div><br>
-		<div class = "static"><div class = "test4">translate(-20px, 0)</div></div>
-		<div class = "static"><div class = "test5">translate(0, 20px)</div></div>
-		<div class = "static"><div class = "test6">translate(0, -20px)</div></div>
+		<div class = "static"><div class = "test">translateX(20px)</div></div>
+		<div class = "static"><div class = "test2">translateX(-20px)</div></div>
+		<div class = "static"><div class = "test3">translateY(20px)</div></div><br>
+		<div class = "static"><div class = "test4">translateY(-20px)</div></div>
+		<div class = "static"><div class = "test5">translateZ(30px)</div></div>
+		<div class = "static"><div class = "test6">translateZ(-30px)</div></div>
 	</body>
 </html>
