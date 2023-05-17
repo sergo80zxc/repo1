@@ -2,44 +2,23 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Управление скоростью обратного переходного эффекта</title>
+	<title>Управление скоростью переходного эффекта</title>
 	<style>
 		div {
-			display: inline-block; 				/* элементы становятся блочно-строчными (выстраиваем в линейку) */
-			width: 100px; 							/* ширина элемента */	
-			height: 100px; 						/* высота элемента */	
-			background-color: pink; 		  /* устанавливаем цвет заднего фона */
-			margin-right: 25px; 					/* внешний отступ с правой стороны */	
-			text-align: center;              /* выравнивание текста по центру */	
-			transition-duration: 5s; 			/* продолжительность переходного эффекта 5 секунд */
+			display: inline-block; 			/* элементы становятся блочно-строчными (выстраиваем в линейку) */
+			width: 100px; 						/* ширина элемента */	
+			height: 100px; 					/* высота элемента */	
+			background-color: pink; 	  /* устанавливаем цвет заднего фона */
+			margin-right: 25px; 				/* внешний отступ с правой стороны */	
+			text-align: center; 				/* выравнивание текста по центру */	
+			transition-duration: 2s; 		/* продолжительность переходного эффекта 2 секунды */
 		}
-		.test1:hover {
-			transition-duration: .5s; 				/* продолжительность переходного эффекта 0,5 секунды */
-			background-color: rgb(0,0,255);   /* устанавливаем цвет заднего фона при наведении на элемент */
-		}
-		.test2:hover {
-			transition-duration: 1s; 				/* продолжительность переходного эффекта 1 секунда */
-			background-color: rgb(0,0,255);   /* устанавливаем цвет заднего фона при наведении на элемент */
-		}
-		.test3:hover {
-			transition-duration: 1.5s; 			/* продолжительность переходного эффекта 1,5 секунды */
-			background-color: rgb(0,0,255);   /* устанавливаем цвет заднего фона при наведении на элемент */
-		}
-		.test4:hover {
-			transition-duration: 2s; 				/* продолжительность переходного эффекта 2 секунды */
-			background-color: rgb(0,0,255);   /* устанавливаем цвет заднего фона при наведении на элемент */
-		}
-		.test5:hover {
-			transition-duration: 2.5s; 			/* продолжительность переходного эффекта 2,5 секунды */
-			background-color: rgb(0,0,255);   /* устанавливаем цвет заднего фона при наведении на элемент */
+		div:hover {
+			background-color: rgb(0,0,255); /* устанавливаем цвет заднего фона */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "test1">0.5s hover<br>5s element</div>
-		<div class = "test2">1s hover<br>5s element</div>
-		<div class = "test3">1.5s hover<br>5s element</div>
-		<div class = "test4">2s hover<br>5s element</div>
-		<div class = "test5">2.5s hover<br>5s element</div>
+		<div>2s element</div>
 	</body>
 </html>
