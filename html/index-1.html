@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Трехмерный поворот элемента</title>
+	<title>Масштабирование элементов</title>
 	<style>
 		.static {
-			display: inline-block; 			/* блочно-строчные элементы (выстраиваем элементы в линейку) */
-			margin: 10px; 						/* внешние отступы со всех сторон */
-			background: gray; 				/* цвет заднего фона */
+			display: inline-block; 		/* блочно-строчные элементы (выстраиваем элементы в линейку) */
+			margin: 10px; 					/* внешние отступы со всех сторон */
+			background: gray; 			/* цвет заднего фона */
 		}
 		div {
 			width: 180px; 					/* ширина элемента */
@@ -19,31 +19,31 @@
 		.test2, .test4, .test6 {background: orange;} 	/* цвет заднего фона */
 		.test, .test3, .test5 {background: plum;} 		/* цвет заднего фона */
 		.test:hover {
-			transform: rotate3d(2,1,0, 50deg); 		/* определяем трехмерный поворот элемента при наведении */
+			transform: scale(0.5); 			/* масштабируем элемент при наведении */
 		}
 		.test2:hover {
-			transform: rotate3d(2,1,0, -50deg); 	/* определяем трехмерный поворот элемента при наведении */
+			transform: scale(0.5, 0.8); 	/* масштабируем элемент при наведении */
 		}
 		.test3:hover {
-			transform: rotate3d(1,1,1, 50deg); 		/* определяем трехмерный поворот элемента при наведении */
+			transform: scale(0.5, 1);		 /* масштабируем элемент при наведении */
 		}
 		.test4:hover {
-			transform: rotate3d(4,2,2, 50deg); 		/* определяем трехмерный поворот элемента при наведении */
+			transform: scale(-0.5, -1); 		/* масштабируем элемент при наведении */
 		}
 		.test5:hover {
-			transform: rotate3d(4,2,2, -50deg); 	/* определяем трехмерный поворот элемента при наведении */
+			transform: scale(2, 2); 		/* масштабируем элемент при наведении */
 		}
 		.test6:hover {
-			transform: rotate3d(4,2,2, 1turn); 		/* определяем трехмерный поворот элемента при наведении */
+			transform: scale(0,0.5); 			/* масштабируем элемент при наведении */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "static"><div class = "test">rotate3d(2,1,0, 50deg)</div></div>
-		<div class = "static"><div class = "test2">rotate3d(2,1,0, -50deg)</div></div>
-		<div class = "static"><div class = "test3">rotate3d(1,1,1, 50deg)</div></div><br>
-		<div class = "static"><div class = "test4">rotate3d(4,2,2, 50deg)</div></div>
-		<div class = "static"><div class = "test5">rotate3d(4,2,2, -50deg)</div></div>
-		<div class = "static"><div class = "test6">rotate3d(4,2,2, 1turn)</div></div>
+		<div class = "static"><div class = "test">scale(0.5)</div></div>
+		<div class = "static"><div class = "test2">scale(0.5, 0.8)</div></div>
+		<div class = "static"><div class = "test3">scale(0.5, 1)</div></div><br>
+		<div class = "static"><div class = "test4">scale(-0.5, -1)</div></div>
+		<div class = "static"><div class = "test5">scale(2, 2)</div></div>
+		<div class = "static"><div class = "test6">scale(0, 0.5)</div></div>
 	</body>
 </html>
