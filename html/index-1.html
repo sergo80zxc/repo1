@@ -2,29 +2,29 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Фиксированное позиционирование элементов</title>
+	<title>test</title>
 	<style>
-		html, body {
-			height: 100%;		/* высота элемента */
-			margin: 0; 			/* внешний отступ со всех сторон */
+      div {
+			width: 200px;
+			height: 200px;
+			background-color: aqua;
+			border: solid 2px red;
+			margin: 2rem;
+			padding: 5px;
+			
 		}
-		.fixed {
-			position: fixed; /* фиксированное позиционирование элемента */	
-			height: 100%; 		/* высота элемента */
-			width: 15%; 		/* ширина элемента */
-			background-color: red; /* цвет заднего фона */
-			right: 0; 			/* смещение от правого края */
+
+		.myElement {
+				background-color: pink; 			  /* устанавливаем цвет заднего фона */
 		}
-		.container {
-			height: 2000px;	 /* высота элемента */
-		}
+		.myElement:hover {
+				background-color: blue; 	        /* устанавливаем цвет заднего фона при наведении на элемент */
+		}					
 	</style>
 </head>
 	<body>
-		<div class = "fixed">
-			fixed
-		</div>
-		<div class = "container">
-		</div>
+<div class="myElement">
+    Шляпа
+</div>
 	</body>
-</html>
+</html> 
