@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Поворот элементов в CSS</title>
+	<title>Поворот элементов по осям</title>
 	<style>
 		.static {
 			display: inline-block; 		/* блочно-строчные элементы (выстраиваем элементы в линейку) */
@@ -12,38 +12,38 @@
 		div {
 			width: 180px; 					/* ширина элемента */
 			height: 100px; 				/* высота элемента */
-			line-height: 100px; 			/* высота строки (выраывниваем по вертикали) */
+			line-height: 100px;			 /* высота строки (выраывниваем по вертикали) */
 			text-align: center; 			/* горизонтальное выравнивание текста по центру */
-			transition: 0.2s; 			/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
+			transition: 0.2s; 				/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
 		}
-		.test2, .test4, .test6 {background: orange;} 	/* цвет заднего фона */
+		.test2, .test4, .test6 {background: orange;} 		/* цвет заднего фона */
 		.test, .test3, .test5 {background: plum;} 		/* цвет заднего фона */
 		.test:hover {
-			transform: rotate(45deg); 		/* определяем поворот элемента при наведении */
+			transform: rotateX(60deg); 		/* определяем поворот элемента по оси X при наведении */
 		}
 		.test2:hover {
-			transform: rotate(-45deg); 	/* определяем поворот элемента при наведении */
+			transform: rotateX(-160deg); 		/* определяем поворот элемента по оси X при наведении */
 		}
 		.test3:hover {
-			transform: rotate(3.5rad); 	/* определяем поворот элемента при наведении */
+			transform: rotateY(20deg); 		/* определяем поворот элемента по оси Y при наведении */
 		}
 		.test4:hover {
-			transform: rotate(200grad); 	/* определяем поворот элемента при наведении */
+			transform: rotateY(60deg); 		/* определяем поворот элемента по оси Y при наведении */
 		}
 		.test5:hover {
-			transform: rotate(-0.75turn); 	/* определяем поворот элемента при наведении */
+			transform: rotateZ(20deg); 		/* определяем поворот элемента по оси Z при наведении */
 		}
 		.test6:hover {
-			transform: rotate(2turn); 			/* определяем поворот элемента при наведении */
+			transform: rotateZ(145deg); 		/* определяем поворот элемента по оси Z при наведении */
 		}
 	</style>
 </head>
 	<body>
-		<div class = "static"><div class = "test">rotate(45deg)</div></div>
-		<div class = "static"><div class = "test2">rotate(-45deg)</div></div>
-		<div class = "static"><div class = "test3">rotate(3.5rad)</div></div><br>
-		<div class = "static"><div class = "test4">rotate(200grad)</div></div>
-		<div class = "static"><div class = "test5">rotate(-0.75turn)</div></div>
-		<div class = "static"><div class = "test6">rotate(2turn)</div></div>
+		<div class = "static"><div class = "test">rotateX(60deg)</div></div>
+		<div class = "static"><div class = "test2">rotateX(-160deg)</div></div>
+		<div class = "static"><div class = "test3">rotateY(20deg)</div></div><br>
+		<div class = "static"><div class = "test4">rotateY(60deg)</div></div>
+		<div class = "static"><div class = "test5">rotateZ(20deg)</div></div>
+		<div class = "static"><div class = "test6">rotateZ(145deg)</div></div>
 	</body>
 </html>
