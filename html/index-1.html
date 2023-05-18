@@ -2,44 +2,46 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Несколько анимаций у одного элемента</title>
+	<title>Повторение анимации</title>
 	<style>
 		div {
-			width: 50px; 							/* ширина элемента */
-			height:  50px; 						/* высота элемента */
-			background-color: yellow; 		/* цвет заднего фона */
-			margin-top: 20px; 					/* внешний отступ сверху */
-			animation-duration: 3s; 			/* продолжительность анимации 3 секунды */
+            width: 50px;                    /* ширина элемента */
+            height: 50px;                   /* высота элемента */
+            border-radius: 100%;            /* определяем форму углов элемента (скругляем) */
+            display: inline-block;          /* устанавливаем элементы как блочно-строчные (выстраиваем в линейку) */
+            color: white;                 /* цвет шрифта */
+            padding: 15px;                  /* внутренние отступы элемента со всех сторон */
+            position: relative;             /* относительное позиционирование (для возможности смещения во время анимации) */
+            text-align: center;             /* выравниваем текст по центру */
+            line-height: 50px;              /* устанавливаем высоту строки */
+            animation-duration: 1.5s;       /* задаём продолжительность анимации 1,5 секунды */
+            animation-name: iliketomoveit;  /* задаём имя анимации */
 		}
-		div:hover { 
-			animation-name: growElement, skewElement; 		/* задаем несколько имен анимаций при наведении */
+		.test {
+		    animation-iteration-count: 1;       /* указываем, что анимация будет повторяться 1 раз */
+		} 
+		.test2 {
+		    animation-iteration-count: 2;       /* указываем, что анимация будет повторяться 2 раза */
+		} 
+		.test3 {
+		    animation-iteration-count: 3.5;     /* указываем, что анимация будет повторяться 3 с половиной раза */
 		}
-		@keyframes growElement {
-			0%, 100% { 								/* начало и конец цикла анимации */
-			width: 50px; 							/* ширина элемента */
-			background-color: yellow; 		/* цвет заднего фона */
-			}
-			50% {  									/* середина цикла анимации */
-			width: 300px; 							/* ширина элемента */
-			background-color: green;		 /* цвет заднего фона */
-			}
+		.test4 {
+		    animation-iteration-count: infinite; /* указываем, что анимация будет повторяться бесконечно */
 		}
-		@keyframes skewElement {
-			5%, 100% { 								/* 5% и 100% (конец анимации) от продолжительности анимации */
-			transform: skew(0deg); 				/* отсутствие наклона элемента */
-			}
-			50% { 									/* середина цикла анимации */
-			transform: skew(-50deg); 			/* наклон элемента относительно оси X (горизонтальная ось) на -50 градусов. */
-			}
-			95% { 									/* 95% от продолжительности анимации */
-			transform: skew(50deg); 			/* наклон элемента относительно оси X (горизонтальная ось) на 50 градусов. */
-			}
-		}
+		@keyframes iliketomoveit { 
+			0%   {top: 0px;}                            /* начало цикла анимации */
+			25%  {top: 200px; background: red;}       /* 25% от продолжительности анимации */
+			75%  {top: 100px;}                          /* 75% от продолжительности анимации */ 
+			100% {top: 0px; background: black;}       /* конец цикла анимации */
+		} 
 	</style>
 </head>
 	<body>
-		<div></div>
-		<div></div>
-		<div></div>
+		<a href = "javascript:window.location.reload()">Обновите перед просмотром</a></br>
+		<div class = "test">1</div>
+		<div class = "test2">2</div>
+		<div class = "test3">3.5</div>
+		<div class = "test4">infinite</div>
 	</body>
 </html>
