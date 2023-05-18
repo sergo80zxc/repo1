@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Однострочные и многострочные флекс контейнеры.</title>
+	<title>Использование свойства justify-content</title>
     <style> 
         .container,
         .container2,
-        .container3 {     
+        .container3,
+        .container4,
+        .container5 {   
             display: flex; /* блочные флекс контейнеры */
         }
         .container {       
-            flex-flow: column; /* флекс элементы отображаются вертикально как колонны */
+            justify-content: flex-start; /* флекс элементы позиционируются в начале контейнера */
         }
-        .container2 {     
-            flex-flow: row-reverse wrap-reverse; /* флекс элементы отображаются горизонтально, в виде строки, которая формируется в обратном направлении и он так же является многострочным флекс контейнером, в котором формирование строк идёт в обратном порядке */
+        .container2 {       
+            justify-content: flex-end; /* флекс элементы позиционируются в конце контейнера */
         }
-        .container3 {     
-            flex-flow: row-reverse wrap; /* флекс элементы отображаются горизонтально, в виде строки, которая формируется в обратном направлении и он так же является многострочным флекс контейнером */
+        .container3 {       
+            justify-content: center; /* флекс элементы позиционируются в центре контейнера */
+        }
+        .container4 {       
+            justify-content: space-between; /* флекс элементы равномерно распределяются по всей строке (первый и последний прижаты по бокам) */
+        }
+        .container5 {       
+            justify-content: space-around; /* флекс элементы равномерно распределяются по всей строке */
         }
         div > div {
-            width: 40%; /* ширина элемента */
-            height: 25px; /* высота элемента */
+            width: 50px; /* ширина элемента */
+            height: 50px; /* высота элемента */
             background: rgb(0,150,208); /* цвет заднего фона */
             color: #fff; /* цвет текста */
             margin: 1px; /* внешние отступы со всех сторон */
@@ -27,20 +35,32 @@
     </style>
 </head>
 	<body>
-		<h3>flex-flow: column</h3>
+		<h3>justify-content: flex-start;</h3>
 		<div class = "container"> <!-- блочный флекс контейнер -->
 			<div>A</div> <!-- дочерний флекс элемент -->
 			<div>B</div> <!-- дочерний флекс элемент -->
 			<div>C</div> <!-- дочерний флекс элемент -->
 		</div>
-		<h3>flex-flow: row-reverse wrap-reverse</h3>
+		<h3>justify-content: flex-end;</h3>
 		<div class = "container2"> <!-- блочный флекс контейнер -->
 			<div>A</div> <!-- дочерний флекс элемент -->
 			<div>B</div> <!-- дочерний флекс элемент -->
 			<div>C</div> <!-- дочерний флекс элемент -->
 		</div>
-		<h3>flex-flow: row-reverse wrap</h3>
+		<h3>justify-content: center;</h3>
 		<div class = "container3"> <!-- блочный флекс контейнер -->
+			<div>A</div> <!-- дочерний флекс элемент -->
+			<div>B</div> <!-- дочерний флекс элемент -->
+			<div>C</div> <!-- дочерний флекс элемент -->
+		</div>
+		<h3>justify-content: space-between;</h3>
+		<div class = "container4"> <!-- блочный флекс контейнер -->
+			<div>A</div> <!-- дочерний флекс элемент -->
+			<div>B</div> <!-- дочерний флекс элемент -->
+			<div>C</div> <!-- дочерний флекс элемент -->
+		</div>
+		<h3>justify-content: space-around;</h3>
+		<div class = "container5"> <!-- блочный флекс контейнер -->
 			<div>A</div> <!-- дочерний флекс элемент -->
 			<div>B</div> <!-- дочерний флекс элемент -->
 			<div>C</div> <!-- дочерний флекс элемент -->
