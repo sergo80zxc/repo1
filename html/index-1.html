@@ -2,54 +2,45 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Пример изменения точки преобразования элемента</title>
+	<title>Продолжительность анимации в CSS</title>
 	<style>
-		.static {
-			display: inline-block; 			/* блочно-строчные элементы (выстраиваем элементы в линейку) */
-			margin: 10px; 						/* внешние отступы со всех сторон */
-			background: gray; 				/* цвет заднего фона */
-			}
 		div {
-			width: 180px; 						/* ширина элемента */
-			height: 100px;						 /* высота элемента */
-			line-height: 100px;					 /* высота строки (выраывниваем по вертикали) */
-			text-align: center; 					/* горизонтальное выравнивание текста по центру */
-			transition: 0.2s; 					/* переходный эффект составляет 200 миллисекунд (0,2 секунды) */
+			width: 50px; 							/* ширина элемента */
+			height:  50px; 						/* высота элемента */
+			background-color: yellow; 		/* цвет заднего фона */
+			margin-top: 20px; 					/* внешний отступ сверху */
 		}
-		.test2, .test4, .test6 {background: orange;} 		/* цвет заднего фона */
-		.test, .test3, .test5 {background: plum;} 		/* цвет заднего фона */
-		.test:hover {
-			transform: rotate(15deg);					/* поворачиваем элемент при наведении */
-			transform-origin: 50% 50% 0; 				/* изменяем точку преобразования элемента при наведении */
+		div:nth-child(1) { 						/* первый элемент <div> по порядку */
+			animation-duration: 2s; 			/* продолжительность анимации 2 секунды */
 		}
-		.test2:hover {
-			transform: rotate(15deg);					/* поворачиваем элемент при наведении */
-			transform-origin: left top; 				/* изменяем точку преобразования элемента при наведении */
+		div:nth-child(2) { 						/* второй элемент <div> по порядку */
+			animation-duration: 4s; 			/* продолжительность анимации 4 секунды */
 		}
-		.test3:hover {
-			transform: rotate(15deg);					/* поворачиваем элемент при наведении */
-			transform-origin: center bottom; 		/* изменяем точку преобразования элемента при наведении */
+		div:nth-child(3) { 						/* третий элемент <div> по порядку */
+			animation-duration: 900ms; 		/* продолжительность анимации 900 миллисекунд */
 		}
-		.test4:hover {
-			transform: rotate(15deg);					/* поворачиваем элемент при наведении */
-			transform-origin: 100% 0%; 				/* изменяем точку преобразования элемента при наведении */
+		div:hover { 								/* добавляем имя анимации при наведении на элемент <div> */
+			animation-name: growElement; 		/* задаем имя анимации */
 		}
-		.test5:hover {
-			transform: rotate(15deg) perspective(500px);		/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот) */
-			transform-origin: 50% 50% -250px;  					/* изменяем точку преобразования элемента при наведении */
-		}
-		.test6:hover {
-			transform: rotate(15deg) perspective(500px);		/* используем несколько функций преобразования для элемента при наведении (перспектива, поворот) */	
-			transform-origin: 50% top 250px; 					/* изменяем точку преобразования элемента при наведении */
-		}
+		@keyframes growElement {
+			0% { 											/* начало цикла анимации */
+			width: 50px; 								/* ширина элемента */
+			background-color: yellow; 			/* цвет заднего фона */
+			}
+			50% { 										/* середина цикла анимации */
+			width: 100px; 								/* ширина элемента */
+			background-color: green; 				/* цвет заднего фона */
+			}
+			100% { 										/* конец цикла анимации */
+			width: 200px; 								/* ширина элемента */
+			background-color: red;  				/* цвет заднего фона */
+			}
+	   }
 	</style>
 </head>
 	<body>
-		<div class = "static"><div class = "test">50% 50% 0</div></div>
-		<div class = "static"><div class = "test2">left top</div></div>
-		<div class = "static"><div class = "test3">center bottom</div></div><br>
-		<div class = "static"><div class = "test4">100% 0%</div></div>
-		<div class = "static"><div class = "test5">50% 50% -250px</div></div>
-		<div class = "static"><div class = "test6">50% top 250px</div></div>
+		<div>2s</div>
+		<div>4s</div>
+		<div>900ms</div>
 	</body>
 </html>
