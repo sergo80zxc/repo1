@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset = "UTF-8">
-	<title>Использование универсального свойства animation</title>
-    <style>
-        .test {
-            width: 100px;                                                           /* устанавливаем ширину блока */
-            height: 100px;                                                          /* устанавливаем высоту блока */
-            position: relative;                                                     /* элемент с относительным позиционированием */
-            animation: iliketomoveit 4s steps(3,start) 500ms infinite reverse;      /* name duration timing-function delay iteration-count direction */ 
-        } 
-        @keyframes iliketomoveit {
-            0%   {left: 0px;}                                                       /* задаем положение элемента при начале анимации */ 
-            50% {left: 500px; border-radius: 50px; background: plum;}             /* задаем смещение элемента относительно левого края, изменяем цвет заднего фона и определяем форму границ (скругление) */ 
-            100% {left: 0px; background: green;}                                  /* задаем первоначальное положение и задаем цвет заднего фона по завершению анимации */ 
-        } 
-    </style>
-</head>
+    <head>
+        <title>Пример размещения флекс контейнера</title>
+        <style> 
+            section {
+                display: flex;                      /* блочный флекс контейнер */
+            }
+            div {
+                background: rgb(0,150,208);       /* цвет заднего фона */
+                color: #fff;                      /* цвет текста */
+                margin: 3px;                        /* внешние отступы со всех сторон */
+            }
+        </style>
+    </head>
 	<body>
-		<div class = "test"></div>
+		<section>                       <!-- флекс контейнер -->
+			<div></div>                 <!-- дочерний флекс элемент -->
+			<div></div>                 <!-- дочерний флекс элемент -->
+			<div>                       <!-- дочерний флекс элемент -->
+				<p>Первый абзац</p>   <!-- не является флекс элементом -->
+				<p>Второй абзац</p>   <!-- не является флекс элементом -->
+				<p>Третий абзац</p>   <!-- не является флекс элементом -->
+			</div>
+		</section>
 	</body>
 </html>
+
+
