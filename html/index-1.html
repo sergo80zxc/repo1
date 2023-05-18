@@ -2,38 +2,51 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Задержка анимации</title>
+	<title>Скорость анимации в CSS</title>
     <style>
         div {
-            width: 75px;                            /* ширина элемента */
-            height: 75px;                           /* высота элемента */
-            border-radius: 100%;                    /* определяем форму углов элемента */
+            width: 45px;                            /* ширина элемента */
+            height: 45px;                           /* высота элемента */
+            color: white;                         /* цвет шрифта белый */
+            background: green;                    /* цвет заднего фона */
+            margin-bottom: 5px;                     /* внешний отступ от нижнего края элемента */
             position: relative;                     /* элемент с относительным позиционированием */
             animation-name: iliketomoveit;          /* задаём имя анимации */
             animation-duration: 5s;                 /* задаём продолжительность анимации */
             animation-iteration-count: infinite;    /* указываем, что анимация будет повторяться бесконечно  */
         }
         .test {
-            animation-delay: -500ms;                /* устанавливаем отрицательную задержку равную -500ms (без задержки со смещением)  */ 
+            timing-function: ease;                  /* эффект анимации начинается медленно, затем незначительно ускоряется и в конце опять замедляется  */
         }
         .test2 {
-            animation-delay: 1500ms;                /* устанавливаем задержку анимации равную 1500 миллисекунд */ 
+            timing-function: linear;                /* эффект анимации с одинаковой скоростью от начала до конца */ 
         }
         .test3 {
-            animation-delay: 2s;                    /* устанавливаем задержку анимации равную 2 секунды */ 
+            timing-function: ease-in;               /* эффект анимации с медленного старта */ 
+        }
+        .test4 {
+            timing-function: ease-out;              /* эффект анимации с медленным окончанием */ 
+        }
+        .test5 {
+            timing-function: ease-in-out;           /* эффект перехода с медленным стартом и медленным окончанием */ 
+        }
+        .test6 {
+            timing-function: cubic-bezier(.94,.06,.83,.67); /* пользовательские значения в кубической функции Безье */ 
         }
         @keyframes iliketomoveit {
-            0%   {left: 0px;}                           /* начало цикла анимации */
-            25%  {left: 400px; background: red;}      /* 25% от продолжительности анимации */
-            75%  {left: 200px;}                         /* 75% от продолжительности анимации */  
-            100% {left: 0px; background: black;}      /* конец цикла анимации */
-        } 
+            0%   {left: 0px ;}          /* начало цикла анимации */
+            25%  {left: 400px ;}        /* 25% от продолжительности анимации */
+            75%  {left: 200px ;}        /* 75% от продолжительности анимации */
+            100% {left: 0px ;}          /* конец цикла анимации */
+        }
     </style>
 </head>
 	<body>
-		<a href = "javascript:window.location.reload()">Обновите перед просмотром</a></br>	
-		<div class = "test">-500ms</div>
-		<div class = "test2">1500ms</div>
-		<div class = "test3">2s</div>
+		<div class = "test">ease</div>
+		<div class = "test2">linear</div>
+		<div class = "test3">ease-in</div>
+		<div class = "test4">ease-out</div>
+		<div class = "test5">ease-in-out</div>
+		<div class = "test6">cubic-bezier</div>
 	</body>
 </html>
