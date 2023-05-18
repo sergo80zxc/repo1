@@ -2,31 +2,44 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Приостановка и запуск анимации</title>
+	<title>Направление анимации</title>
     <style>
-        .test {
-            width: 100px;                           /* ширина элемента */
-            height: 100px;                          /* высота элемента */
+        div {
+            width: 75px;                            /* ширина элемента */
+            height: 75px;                           /* высота элемента */
+            border-radius: 60px;                    /* форма углов элемента */
+            display: inline-block;                  /* устанавливаем элементы <div> как блочно-строчные (выстраиваем в линейку) */
             color: white;                         /* цвет шрифта белый */
-            background: green;                    /* цвет заднего фона */
+            padding: 15px;                          /* внутренние отступы элемента со всех сторон */
             position: relative;                     /* элемент с относительным позиционированием */
-            animation-name: iliketomoveit;          /* имя анимации */
-            animation-duration: 5s;                 /* продолжительность анимации */
-            animation-iteration-count: infinite;    /* указываем, что анимация будет повторяться бесконечно  */
-            animation-play-state: running;          /* анимация воспроизводится (значение по умолчанию)  */
+            animation-duration: 1.5s;               /* задаём продолжительность анимации 1,5 секунды */
+            animation-name: iliketomoveit;          /* задаём имя анимации */
+            animation-iteration-count: infinite;    /* анимация будет повторяться бесконечно  */
         }
-        .test:hover {
-            animation-play-state: paused;           /* указываем, что анимация приостанавливается при наведении курсора мыши на элемент  */
+        .test {
+            animation-direction: normal;            /* при завершении цикла анимации, анимация сбрасывается в начало и начинает цикл заново. */ 
+        }
+        .test2 {
+            animation-direction: reverse;           /* анимация воспроизводиться в обратном направлении */ 
+        }
+        .test3 {
+            animation-direction: alternate;         /* анимация воспроизводиться как normal каждый нечетный раз (1, 3, 5...) и как reverse каждый четный раз (2, 4, 6...) */ 
+        }
+        .test4 {
+            animation-direction: alternate-reverse; /* анимация воспроизводиться как reverse каждый нечетный раз (1, 3, 5...) и как normal каждый четный раз (2, 4, 6...) */ 
         }
         @keyframes iliketomoveit {
-            0%   {left: 0px;}           /* начало цикла анимации */
-            25%  {left: 400px;}         /* 25% от продолжительности анимации */
-            75%  {left: 200px;}         /* 75% от продолжительности анимации */ 
-            100% {left: 0px;}           /* конец цикла анимации */
+            0%   {top: 0px;}                            /* начало цикла анимации */
+            25%  {top: 180px; background: red;}       /* 25% от продолжительности анимации */
+            75%  {top: 90px;}                           /* 75% от продолжительности анимации */
+            100% {top: 0px; background: black;}       /* конец цикла анимации */
         }
     </style>
 </head>
 	<body>
-		<div class = "test">наведи на меня</div>	
+		<div class = "test">normal</div>
+		<div class = "test2">reverse</div>
+		<div class = "test3">alternate</div>
+		<div class = "test4">alternate-reverse</div>
 	</body>
 </html>
