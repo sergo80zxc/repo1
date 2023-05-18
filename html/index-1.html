@@ -2,43 +2,31 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Пример пошаговой анимация в CSS</title>
+	<title>Приостановка и запуск анимации</title>
     <style>
-        div {
-            width: 70px;                                /* устанавливаем ширину блока */
-            height: 70px;                               /* устанавливаем высоту блока */
-            color: white;                             /* устанавливаем цвет шрифта белый */
-            background: green;                        /* устанавливаем цвет заднего фона */
-            margin-bottom: 5px;                         /* устанавливаем отступ от нижнего края элемента */
-            position: relative;                         /* элемент с относительным позиционированием */
-            animation-name: iliketomoveit;              /* задаём имя анимации (соответствует имени назначенному в ключевых кадрах)  */
-            animation-duration: 5s;                     /* задаём продолжительность анимации */
-            animation-iteration-count: infinite;        /* указываем, что анимация будет повторяться бесконечно  */
-        }
         .test {
-            animation-timing-function: steps(3, end);   /* указывает пошаговую функцию  */ 
+            width: 100px;                           /* ширина элемента */
+            height: 100px;                          /* высота элемента */
+            color: white;                         /* цвет шрифта белый */
+            background: green;                    /* цвет заднего фона */
+            position: relative;                     /* элемент с относительным позиционированием */
+            animation-name: iliketomoveit;          /* имя анимации */
+            animation-duration: 5s;                 /* продолжительность анимации */
+            animation-iteration-count: infinite;    /* указываем, что анимация будет повторяться бесконечно  */
+            animation-play-state: running;          /* анимация воспроизводится (значение по умолчанию)  */
         }
-        .test2 {
-            animation-timing-function: steps(3, start); /* указывает пошаговую функцию */ 
-        }
-        .test3 {
-            animation-timing-function: step-start;      /* указывает пошаговую функцию - эквивалент steps(1, start) */ 
-        }
-        .test4 {
-            animation-timing-function: step-end;        /* указывает пошаговую функцию - steps(1, end) */ 
+        .test:hover {
+            animation-play-state: paused;           /* указываем, что анимация приостанавливается при наведении курсора мыши на элемент  */
         }
         @keyframes iliketomoveit {
-            0%   {left: 0px;}       /* начало цикла анимации */
-            25%  {left: 400px;}     /* 25% от продолжительности анимации */ 
-            75%  {left: 200px;}     /* 75% от продолжительности анимации */  
-            100% {left: 0px;}       /* конец цикла анимации */ 
+            0%   {left: 0px;}           /* начало цикла анимации */
+            25%  {left: 400px;}         /* 25% от продолжительности анимации */
+            75%  {left: 200px;}         /* 75% от продолжительности анимации */ 
+            100% {left: 0px;}           /* конец цикла анимации */
         }
     </style>
 </head>
 	<body>
-		<div class = "test">steps(3, end)</div>
-		<div class = "test2">steps(3, start)</div>
-		<div class = "test3">step-start</div>
-		<div class = "test4">step-end</div>
+		<div class = "test">наведи на меня</div>	
 	</body>
 </html>
