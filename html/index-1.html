@@ -2,44 +2,41 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Направление анимации</title>
+	<title>Использование свойства animation-fill-mode</title>
     <style>
         div {
-            width: 75px;                            /* ширина элемента */
-            height: 75px;                           /* высота элемента */
-            border-radius: 60px;                    /* форма углов элемента */
-            display: inline-block;                  /* устанавливаем элементы <div> как блочно-строчные (выстраиваем в линейку) */
-            color: white;                         /* цвет шрифта белый */
-            padding: 15px;                          /* внутренние отступы элемента со всех сторон */
-            position: relative;                     /* элемент с относительным позиционированием */
-            animation-duration: 1.5s;               /* задаём продолжительность анимации 1,5 секунды */
-            animation-name: iliketomoveit;          /* задаём имя анимации */
-            animation-iteration-count: infinite;    /* анимация будет повторяться бесконечно  */
+            width: 100px;                       /* ширина элемента */
+            height: 100px;                      /* высота элемента */
+            color: white;                     /* цвет шрифта */
+            background: green;                /* цвет заднего фона */
+            display: inline-block;              /* устанавливаем элементы <div> как блочно-строчные (выстраиваем в линейку) */
+            position: relative;                 /* элемент с относительным позиционированием  */
+            animation-name: iliketomoveit;      /* имя анимации */
+            animation-duration: 5s;             /* продолжительность анимации */
+            animation-animation-delay: 2s;      /* анимация воспроизводится c задержкой 2 секунды  */
         }
         .test {
-            animation-direction: normal;            /* при завершении цикла анимации, анимация сбрасывается в начало и начинает цикл заново. */ 
+            animation-fill-mode: none;          /* не применяются какие-либо стили до (во время задержки), или после воспроизведения анимации */
         }
         .test2 {
-            animation-direction: reverse;           /* анимация воспроизводиться в обратном направлении */ 
+            animation-fill-mode: forwards;      /* по окончанию анимации  применяется стиль последнего ключевого кадра (красный фон) */
         }
         .test3 {
-            animation-direction: alternate;         /* анимация воспроизводиться как normal каждый нечетный раз (1, 3, 5...) и как reverse каждый четный раз (2, 4, 6...) */ 
+            animation-fill-mode: backwards;     /*  применяется стиль первого ключевого кадра, действие сохраняется на протяжении периода задержки. */
         }
         .test4 {
-            animation-direction: alternate-reverse; /* анимация воспроизводиться как reverse каждый нечетный раз (1, 3, 5...) и как normal каждый четный раз (2, 4, 6...) */ 
+            animation-fill-mode: both;          /*  применяются оба значения: forwards и backwards (как только анимация будет завершена и перед тем как она будет запущена - во время задержки). */
         }
         @keyframes iliketomoveit {
-            0%   {top: 0px;}                            /* начало цикла анимации */
-            25%  {top: 180px; background: red;}       /* 25% от продолжительности анимации */
-            75%  {top: 90px;}                           /* 75% от продолжительности анимации */
-            100% {top: 0px; background: black;}       /* конец цикла анимации */
-        }
+            0%   {background: yellow;}          /* задаем цвет заднего фона при начале анимации */
+            100% {background: red;}             /* задаем цвет заднего фона по завершению анимации */
+        } 
     </style>
 </head>
 	<body>
-		<div class = "test">normal</div>
-		<div class = "test2">reverse</div>
-		<div class = "test3">alternate</div>
-		<div class = "test4">alternate-reverse</div>
+		<div class = "test">none</div>
+		<div class = "test2">forwards</div>
+		<div class = "test3">backwards</div>
+		<div class = "test4">both</div>
 	</body>
 </html>
