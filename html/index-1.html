@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Использование свойства justify-content</title>
+	<title>Использование свойства align-content</title>
     <style> 
         .container,
         .container2,
         .container3,
         .container4,
-        .container5 {   
+        .container5,
+        .container6 {   
             display: flex; /* блочные флекс контейнеры */
+            flex-wrap: wrap; /* многострочный флекс контейнер */
+            height: 200px; /* высота контейнера */
+            background: rgba(0,0,0,.4); /* цвет заднего фона */
         }
         .container {       
-            justify-content: flex-start; /* флекс элементы позиционируются в начале контейнера */
+            align-content: stretch; /* строки внутри флекс контейнера равномерно растягиваются, заполняя свободное пространство (значение по умолчанию) */
         }
         .container2 {       
-            justify-content: flex-end; /* флекс элементы позиционируются в конце контейнера */
+            align-content: flex-start; /* строки внутри флекс контейнера располагаются в начале поперечной оси */
         }
         .container3 {       
-            justify-content: center; /* флекс элементы позиционируются в центре контейнера */
+            align-content: flex-end; /* строки внутри флекс контейнера располагаются с конца поперечной оси */
         }
         .container4 {       
-            justify-content: space-between; /* флекс элементы равномерно распределяются по всей строке (первый и последний прижаты по бокам) */
+            align-content: center; /* строки внутри флекс контейнера располагаются по центру контейнера */
         }
         .container5 {       
-            justify-content: space-around; /* флекс элементы равномерно распределяются по всей строке */
+            align-content: space-between; /* строки внутри флекс контейнера равномерно распределяются (первая строка позиционируются в начале поперечной оси, а последняя с конца поперечной оси) */
+        }
+        .container6 {       
+            align-content: space-around; /* строки внутри флекс контейнера равномерно распределяются */
         }
         div > div {
-            width: 50px; /* ширина элемента */
-            height: 50px; /* высота элемента */
+            width: 30%; /* ширина элемента */
             background: rgb(0,150,208); /* цвет заднего фона */
             color: #fff; /* цвет текста */
             margin: 1px; /* внешние отступы со всех сторон */
@@ -35,35 +41,35 @@
     </style>
 </head>
 	<body>
-		<h3>justify-content: flex-start;</h3>
+		<h3>align-content: stretch;</h3>
 		<div class = "container"> <!-- блочный флекс контейнер -->
-			<div>A</div> <!-- дочерний флекс элемент -->
-			<div>B</div> <!-- дочерний флекс элемент -->
-			<div>C</div> <!-- дочерний флекс элемент -->
+			<div>A</div><div>B</div><div>C</div> <!-- дочерние флекс элементы -->
+			<div>D</div><div>E</div><div>F</div> <!-- дочерние флекс элементы -->
 		</div>
-		<h3>justify-content: flex-end;</h3>
+		<h3>align-content: flex-start;</h3>
 		<div class = "container2"> <!-- блочный флекс контейнер -->
-			<div>A</div> <!-- дочерний флекс элемент -->
-			<div>B</div> <!-- дочерний флекс элемент -->
-			<div>C</div> <!-- дочерний флекс элемент -->
+			<div>A</div><div>B</div><div>C</div> <!-- дочерние флекс элементы -->
+			<div>D</div><div>E</div><div>F</div> <!-- дочерние флекс элементы -->
 		</div>
-		<h3>justify-content: center;</h3>
+		<h3>align-content: flex-end;</h3>
 		<div class = "container3"> <!-- блочный флекс контейнер -->
-			<div>A</div> <!-- дочерний флекс элемент -->
-			<div>B</div> <!-- дочерний флекс элемент -->
-			<div>C</div> <!-- дочерний флекс элемент -->
+			<div>A</div><div>B</div><div>C</div> <!-- дочерние флекс элементы -->
+			<div>D</div><div>E</div><div>F</div> <!-- дочерние флекс элементы -->
 		</div>
-		<h3>justify-content: space-between;</h3>
+		<h3>align-content: center;</h3>
 		<div class = "container4"> <!-- блочный флекс контейнер -->
-			<div>A</div> <!-- дочерний флекс элемент -->
-			<div>B</div> <!-- дочерний флекс элемент -->
-			<div>C</div> <!-- дочерний флекс элемент -->
+			<div>A</div><div>B</div><div>C</div> <!-- дочерние флекс элементы -->
+			<div>D</div><div>E</div><div>F</div> <!-- дочерние флекс элементы -->
 		</div>
-		<h3>justify-content: space-around;</h3>
+		<h3>align-content: space-between;</h3>
 		<div class = "container5"> <!-- блочный флекс контейнер -->
-			<div>A</div> <!-- дочерний флекс элемент -->
-			<div>B</div> <!-- дочерний флекс элемент -->
-			<div>C</div> <!-- дочерний флекс элемент -->
+			<div>A</div><div>B</div><div>C</div> <!-- дочерние флекс элементы -->
+			<div>D</div><div>E</div><div>F</div> <!-- дочерние флекс элементы -->
+		</div>
+		<h3>align-content: space-around;</h3>
+		<div class = "container6"> <!-- блочный флекс контейнер -->
+			<div>A</div><div>B</div><div>C</div> <!-- дочерние флекс элементы -->
+			<div>D</div><div>E</div><div>F</div> <!-- дочерние флекс элементы -->
 		</div>
 	</body>
 </html>
