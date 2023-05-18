@@ -2,46 +2,38 @@
 <html>
 <head>
 	<meta charset = "UTF-8">
-	<title>Повторение анимации</title>
-	<style>
-		div {
-            width: 50px;                    /* ширина элемента */
-            height: 50px;                   /* высота элемента */
-            border-radius: 100%;            /* определяем форму углов элемента (скругляем) */
-            display: inline-block;          /* устанавливаем элементы как блочно-строчные (выстраиваем в линейку) */
-            color: white;                 /* цвет шрифта */
-            padding: 15px;                  /* внутренние отступы элемента со всех сторон */
-            position: relative;             /* относительное позиционирование (для возможности смещения во время анимации) */
-            text-align: center;             /* выравниваем текст по центру */
-            line-height: 50px;              /* устанавливаем высоту строки */
-            animation-duration: 1.5s;       /* задаём продолжительность анимации 1,5 секунды */
-            animation-name: iliketomoveit;  /* задаём имя анимации */
-		}
-		.test {
-		    animation-iteration-count: 1;       /* указываем, что анимация будет повторяться 1 раз */
-		} 
-		.test2 {
-		    animation-iteration-count: 2;       /* указываем, что анимация будет повторяться 2 раза */
-		} 
-		.test3 {
-		    animation-iteration-count: 3.5;     /* указываем, что анимация будет повторяться 3 с половиной раза */
-		}
-		.test4 {
-		    animation-iteration-count: infinite; /* указываем, что анимация будет повторяться бесконечно */
-		}
-		@keyframes iliketomoveit { 
-			0%   {top: 0px;}                            /* начало цикла анимации */
-			25%  {top: 200px; background: red;}       /* 25% от продолжительности анимации */
-			75%  {top: 100px;}                          /* 75% от продолжительности анимации */ 
-			100% {top: 0px; background: black;}       /* конец цикла анимации */
-		} 
-	</style>
+	<title>Задержка анимации</title>
+    <style>
+        div {
+            width: 75px;                            /* ширина элемента */
+            height: 75px;                           /* высота элемента */
+            border-radius: 100%;                    /* определяем форму углов элемента */
+            position: relative;                     /* элемент с относительным позиционированием */
+            animation-name: iliketomoveit;          /* задаём имя анимации */
+            animation-duration: 5s;                 /* задаём продолжительность анимации */
+            animation-iteration-count: infinite;    /* указываем, что анимация будет повторяться бесконечно  */
+        }
+        .test {
+            animation-delay: -500ms;                /* устанавливаем отрицательную задержку равную -500ms (без задержки со смещением)  */ 
+        }
+        .test2 {
+            animation-delay: 1500ms;                /* устанавливаем задержку анимации равную 1500 миллисекунд */ 
+        }
+        .test3 {
+            animation-delay: 2s;                    /* устанавливаем задержку анимации равную 2 секунды */ 
+        }
+        @keyframes iliketomoveit {
+            0%   {left: 0px;}                           /* начало цикла анимации */
+            25%  {left: 400px; background: red;}      /* 25% от продолжительности анимации */
+            75%  {left: 200px;}                         /* 75% от продолжительности анимации */  
+            100% {left: 0px; background: black;}      /* конец цикла анимации */
+        } 
+    </style>
 </head>
 	<body>
-		<a href = "javascript:window.location.reload()">Обновите перед просмотром</a></br>
-		<div class = "test">1</div>
-		<div class = "test2">2</div>
-		<div class = "test3">3.5</div>
-		<div class = "test4">infinite</div>
+		<a href = "javascript:window.location.reload()">Обновите перед просмотром</a></br>	
+		<div class = "test">-500ms</div>
+		<div class = "test2">1500ms</div>
+		<div class = "test3">2s</div>
 	</body>
 </html>
